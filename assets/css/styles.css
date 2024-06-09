@@ -430,6 +430,10 @@ img {
 }
 
 /*======================================================================= HOME ======================================*/
+.home {
+    padding-bottom: 4rem;
+}
+
 .home__container {
     gap: 1rem;
     display: flex;
@@ -542,6 +546,10 @@ img {
 }
 
 /*================================================================ ABOUT ========================================================*/
+.about {
+    padding-top: 4rem;
+}
+
 .about__container {
     display: flex;
     flex-direction: column;
@@ -1033,7 +1041,7 @@ img {
 /*==================== ARTICLES ====================*/
 .swiper-container {
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
     padding: 2rem 0;
     margin: auto;
 }
@@ -1046,7 +1054,7 @@ img {
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 100%; 
+    max-width: 100%;
 }
 
 .article__card {
@@ -1116,7 +1124,7 @@ img {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; 
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     flex-grow: 1;
 }
@@ -1491,6 +1499,7 @@ img {
         grid-template-columns: 0.6fr;
         justify-content: center;
     }
+
     .expertise-hr {
         display: none;
     }
@@ -1728,6 +1737,7 @@ img {
 
 /* For large devices */
 @media screen and (min-width: 1024px) {
+
     .header,
     .main,
     .footer__container {
