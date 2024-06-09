@@ -500,6 +500,7 @@ img {
 
 .home__title {
     font-size: var(--h1-font-size);
+    padding-bottom: 20px;
 }
 
 .home__subtitle {
@@ -514,10 +515,11 @@ img {
 }
 
 .home__scroll {
-    display: flex;
+    display: block;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     margin: auto;
+
 }
 
 .home__scroll-button {
@@ -1599,13 +1601,9 @@ img {
         width: 270px;
     }
 
-    .home__scroll {
-        display: block;
-    }
-
     .home__scroll-button {
-        margin-left: 3rem;
         pointer-events: auto;
+        align-items: left;
     }
 
     .about__container {
@@ -1716,6 +1714,12 @@ img {
     }
 }
 
+@media screen and (max-width: 968px){
+    .home__scroll{
+        display: none;
+    }
+}
+
 @media screen and (min-width: 968px) {
     :root {
         --big-font-size: 3rem;
@@ -1731,7 +1735,7 @@ img {
         height: calc(100vh - var(--header-height));
     }
     .home__content {
-        padding-top: 50px;
+        padding-top: 100px;
     }
 }
 
