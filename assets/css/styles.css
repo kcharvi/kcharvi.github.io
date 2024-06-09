@@ -479,9 +479,7 @@ img {
     color: #fff;
 }
 
-.home__social-icon:hover svg path,
-.home__social-icon:hover .fa-solid,
-.home__social-icon:hover .fa-brands {
+.home__social-icon:hover svg path {
     fill: #fff;
     color: #fff;
 }
@@ -925,6 +923,16 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.Expertise__content img {
+    border-radius: 1rem;
+}
+
+.light-theme .Expertise__content img {
+    border-radius: 1rem;
+    border: 1px solid var(--first-color-blob);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .Expertise__header {
     display: flex;
     align-items: center;
@@ -1040,6 +1048,7 @@ img {
     visibility: visible;
 }
 
+
 /*==================== ARTICLES ====================*/
 .swiper-container {
     width: 100%;
@@ -1118,6 +1127,7 @@ img {
     height: 150px;
     object-fit: cover;
     margin: 0 auto;
+    border-radius: 0.5rem;
 }
 
 .article__card p {
@@ -1128,6 +1138,23 @@ img {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     flex-grow: 1;
+}
+
+.dark-theme .article__card {
+    background: var(--input-color);
+    color: #fff;
+    /* White text for dark theme */
+}
+
+.dark-theme .swiper-button-next,
+.dark-theme .swiper-button-prev {
+    color: #fff;
+}
+
+.dark-theme .article__card h4,
+.dark-theme .article__card p {
+    color: #fff;
+    /* White text for dark theme */
 }
 
 /*==================== PROJECT IN MIND ====================*/
@@ -1501,9 +1528,6 @@ img {
         justify-content: center;
     }
 
-    .expertise-hr {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1665,10 +1689,15 @@ img {
     }
 
     .Expertise__modal-content {
-        width: 1500px;
+        width: 1200px;
         max-height: 80vh;
         overflow-y: auto;
     }
+
+    .expertise-hr {
+        display: none;
+    }
+
 
     .article__card {
         width: 90%;
@@ -1719,8 +1748,8 @@ img {
     }
 }
 
-@media screen and (max-width: 968px){
-    .home__scroll{
+@media screen and (max-width: 968px) {
+    .home__scroll {
         display: none;
     }
 }
@@ -1735,13 +1764,16 @@ img {
         --small-font-size: 0.875rem;
         --smaller-font-size: 0.813rem;
     }
+
     .home__container {
         row-gap: 5rem;
         height: calc(100vh - var(--header-height));
     }
+
     .home__content {
         padding-top: 100px;
     }
+
 }
 
 /* For large devices */
@@ -1763,6 +1795,14 @@ img {
 
     .Expertise__container {
         grid-template-columns: repeat(3, 238px);
+    }
+
+    .Expertise__container {
+        gap: 1.5rem;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-top: 2%;
+        margin-bottom: 2%;
     }
 
     .contact__inputs {
