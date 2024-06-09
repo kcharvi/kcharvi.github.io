@@ -142,7 +142,7 @@
                         <p class="home__description"></p>
                         <p class="home__description">Currently, I am a 🎓Graduate Student @University at Buffalo, pursuing MS
                             in Computer Science and Engineering.</p>
-                        <p class="home__description">I like to proudly say that I was awarded the <br>
+                        <p class="home__description">I like to proudly say that I was awarded the
                             🏅Chancellor's Gold Medal for the Best Outgoing Student for the batch of 2023 at VIT, India.</p>
                         <p class="home__description">My interests include ML, DL, Reinforcement learning, Software
                             Development and Testing, and Natural Language Processing.</p>
@@ -152,7 +152,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="home_scroll">
+                <div class="home__scroll">
                     <a href="#about" class="home__scroll-button button--flex">
                         <i class="uil uil-mouse-alt home__scroll-mouse"></i>
                         <span class="home__scroll-name">Scroll down</span>
@@ -185,10 +185,10 @@
 
                 <div class="about__data">
                     <p class="about__description">
-                        <span class="highlight">I'm into using AI and ML</span> to build meaningful solutions that helps
+                        <b>I'm into using AI and ML</b> to build meaningful solutions that helps
                         people. I was fascinated by the extent of applications in this
                         field when I started. With each project and experience, I've became more enthusiastic about
-                        developing and debugging code <span class="highlight">that makes a real impact.</span>
+                        developing and debugging code <b>that makes a real impact.</b>
                         During Bachelors I cultivated deeper understanding of core technologies of CSE including
                         applications of OOPs in programming, Software Engineering,
                         Web and Mobile applications as a product, and finally AI with research.
@@ -196,10 +196,10 @@
                     <p class="about__description">
                         Fast-forward to today, I've had the privilege of taking on 3 challenging internship experiences
                         that honed my core CSE skills.
-                        As a graduate student <span class="highlight">I found my niche</span> and worked towards
+                        As a graduate student <b>I found my niche</b> and worked towards
                         strengthening my
                         skills with impactful projects - turns out I have the potential to contribute in both
-                        <span class="highlight">Software Development and AI/ML</span> oriented roles."
+                        <b>Software Development and AI/ML</b> oriented roles.
                     </p>
 
                     <div class="about__info">
@@ -944,7 +944,8 @@
                     </div>
                 </div>
 
-
+                <hr class="expertise-hr">
+                
                 <div class="Expertise__modal-flex">
                     <div class="Expertise__modal-image">
                         <img src="assets/img/rx_rover_project.gif" alt="RxRover Simulation" width="450px"
@@ -978,6 +979,8 @@
                         </ol>
                     </div>
                 </div>
+
+                <hr class="expertise-hr">
 
                 <div class="Expertise__modal-flex">
                     <div class="Expertise__modal-image">
@@ -1013,6 +1016,8 @@
                         </ol>
                     </div>
                 </div>
+
+                <hr class="expertise-hr">
 
                 <div class="Expertise__modal-flex">
                     <div class="Expertise__modal-image">
@@ -1131,6 +1136,8 @@
                     </div>
                 </div>
 
+                <hr class="expertise-hr">
+
                 <div class="Expertise__modal-flex">
                     <div class="Expertise__modal-image">
                         <img src="assets/img/pneumonia_project.png" alt="Pneumonia Workflow" width="400px"
@@ -1239,6 +1246,9 @@
                         </ol>
                     </div>
                 </div>
+
+                <hr class="expertise-hr">
+
                 <div class="Expertise__modal-flex">
                     <div class="Expertise__modal-image">
                         <img src="assets/img/pydigital_project.png" alt="PyDigital Working" width="450px"
@@ -1335,39 +1345,46 @@
             </div>
         </section>
 
-        <!--==================== ARTICLES ====================-->
         <section class="articles section" id="articles">
             <h2 class="section__title">Medium Articles</h2>
             <span class="section__subtitle">See some of my published articles. Writer@<a href="https://medium.com/@teendifferent">Teendifferent</a></span>
-            <div class="articles__container container">
-                <div class="articles__content">
-                    <div class="card">
-                        <a href="https://medium.com/gitconnected/secrets-to-a-killer-data-science-portfolio-projects-that-will-skyrocket-your-career-67089b924929" target="_blank">
-                            <h4>🚀 Build Smarter AI, Faster: A Beginner's Guide to Reinforcement Learning</h4>
-                            <img class="medium-article-img" src="/assets/img/rl_beginners_guide_article.webp" alt="Description of the image" width="200" height="200">
-                            <p>A comprehensive guide that will equip you with the knowledge and understanding of RL algorithms.</p>
-                        </a>
+            
+            <div class="swiper-container container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="article__card">
+                            <a href="https://medium.com/gitconnected/secrets-to-a-killer-data-science-portfolio-projects-that-will-skyrocket-your-career-67089b924929" target="_blank">
+                                <h4>🚀 Build Smarter AI, Faster: A Beginner's Guide to Reinforcement Learning</h4>
+                                <img class="medium-article-img" src="/assets/img/rl_beginners_guide_article.webp" alt="Description of the image">
+                                <p>A comprehensive guide that will equip you with the knowledge and understanding of RL algorithms.</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="article__card">
+                            <a href="https://medium.com/python-in-plain-english/python-the-glittering-jewel-of-modern-technology-972976c130f4" target="_blank">
+                                <h4>📃 Human Touch in AI: Revolutionizing How Machines Summarize Info</h4>
+                                <img class="medium-article-img" src="/assets/img/summarizing_article.png" alt="Description of the image">
+                                <p>Have you ever wondered how CHATGPT got so good at summarizing complex content? Click me</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="article__card">
+                            <a href="https://medium.com/predict/deploying-deep-learning-model-in-flutter-with-tflite-507b30ce00f0" target="_blank">
+                                <h4>🛠️ How to Deploy AI Models with Flutter & TensorFlow Lite</h4>
+                                <img class="medium-article-img" src="/assets/img/flutter_article.webp" alt="Description of the image">
+                                <p>Learn to deploy deep models in Flutter! Take the first step to showcase your work with a mobile application.</p>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="articles__content">
-                    <div class="card">
-                        <a href="https://medium.com/python-in-plain-english/python-the-glittering-jewel-of-modern-technology-972976c130f4" target="_blank">
-                            <h4>📃 Human Touch in AI: Revolutionizing How Machines Summarize Info</h4>
-                            <img class="medium-article-img" src="/assets/img/summarizing_article.png" alt="Description of the image" width="200" height="200">
-                            <p>Have you ever wondered how CHATGPT got so good at summarizing complex content? Click me</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="articles__content">
-                    <div class="card">
-                        <a href="https://medium.com/predict/deploying-deep-learning-model-in-flutter-with-tflite-507b30ce00f0" target="_blank">
-                            <h4>🛠️ How to Deploy AI Models with Flutter & TensorFlow Lite</h4>
-                            <img class="medium-article-img" src="/assets/img/flutter_article.webp" alt="Description of the image" width="200" height="200">
-                            <p>Learn to deploy deep models in Flutter! Take the first step to showcase your work with a mobile application.</p>
-                        </a>
-                    </div>
-                </div>
+        
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
+            
             <div class="about__buttons">
                 <a href="https://medium.com/@teendifferent" class="button button--flex button--small button--link" target="_blank" title="Teen Different">
                     Read More
@@ -1375,6 +1392,7 @@
                 </a>
             </div>
         </section>
+               
 
         <!--==================== PROJECT IN MIND ====================-->
         <section class="project section">
