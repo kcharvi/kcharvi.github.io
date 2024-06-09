@@ -124,6 +124,12 @@ a {
     color: var(--first-color);
 }
 
+a:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 img {
     max-width: 100%;
     height: auto;
