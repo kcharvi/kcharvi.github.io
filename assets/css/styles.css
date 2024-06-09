@@ -430,10 +430,6 @@ img {
 }
 
 /*======================================================================= HOME ======================================*/
-.home {
-    padding-bottom: 4rem;
-}
-
 .home__container {
     gap: 1rem;
     display: flex;
@@ -518,6 +514,9 @@ img {
 }
 
 .home__scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
 }
 
@@ -546,10 +545,6 @@ img {
 }
 
 /*================================================================ ABOUT ========================================================*/
-.about {
-    padding-top: 4rem;
-}
-
 .about__container {
     display: flex;
     flex-direction: column;
@@ -1041,7 +1036,6 @@ img {
 /*==================== ARTICLES ====================*/
 .swiper-container {
     width: 100%;
-    max-width: 100%;
     padding: 2rem 0;
     margin: auto;
 }
@@ -1595,7 +1589,6 @@ img {
 
     .home__container {
         row-gap: 5rem;
-        height: calc(100vh - var(--header-height));
     }
 
     .home__content {
@@ -1732,6 +1725,13 @@ img {
         --normal-font-size: 1rem;
         --small-font-size: 0.875rem;
         --smaller-font-size: 0.813rem;
+    }
+    .home__container {
+        row-gap: 5rem;
+        height: calc(100vh - var(--header-height));
+    }
+    .home__content {
+        padding-top: 50px;
     }
 }
 
