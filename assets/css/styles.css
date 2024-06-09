@@ -1,4 +1,4 @@
-/*==================== GOOGLE FONTS ====================*/
+/*=========================================================== GOOGLE FONTS ==============================================================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /*============================================================ VARIABLES CSS ============================================================*/
@@ -26,7 +26,6 @@
     --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
     --scrollup-color: hsl(var(--hue-color), 89%, 60%);
 
-    /*========== Font and typography ==========*/
     --body-font: "Poppins", sans-serif;
 
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
@@ -38,11 +37,9 @@
     --small-font-size: 0.813rem;
     --smaller-font-size: 0.75rem;
 
-    /*========== Font weight ==========*/
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    /*========== Margenes Bottom ==========*/
     /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
     --mb-0-25: 0.25rem;
     --mb-0-5: 0.5rem;
@@ -53,23 +50,9 @@
     --mb-2-5: 2.5rem;
     --mb-3: 3rem;
 
-    /*========== z index ==========*/
     --z-tooltip: 10;
     --z-fixed: 100;
     --z-modal: 1000;
-}
-
-/* Font size for large devices */
-@media screen and (min-width: 968px) {
-    :root {
-        --big-font-size: 3rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: 0.875rem;
-        --smaller-font-size: 0.813rem;
-    }
 }
 
 /*========== Variables Dark theme ==========*/
@@ -105,7 +88,7 @@ body.dark-theme {
     color: var(--first-color);
 }
 
-/*==================== BASE ====================*/
+/*=================================================================== BASE TAGS ========================================================*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -146,27 +129,23 @@ img {
     height: auto;
 }
 
-/*==================== REUSABLE CSS CLASSES ====================*/
+/*============================================================ REUSABLE CSS CLASSES ======================================================*/
 .section {
-    padding: 2rem 0 4rem;
+    padding: 2rem 0rem 2rem 0rem;
 }
 
 .section__title {
     font-size: var(--h1-font-size);
+    text-align: center;
 }
 
 .section__subtitle {
     display: block;
     font-size: var(--small-font-size);
     margin-bottom: var(--mb-3);
-}
-
-.section__title,
-.section__subtitle {
     text-align: center;
 }
 
-/*==================== LAYOUT ====================*/
 .container {
     max-width: 768px;
     margin-left: var(--mb-1-5);
@@ -187,7 +166,7 @@ img {
     background-color: var(--body-color);
 }
 
-/*==================== NAV ====================*/
+/*=========================================================================== NAV ======================================================*/
 .nav {
     max-width: 868px;
     height: var(--header-height);
@@ -196,8 +175,19 @@ img {
     align-items: center;
 }
 
-.nav__logo,
 .nav__toggle {
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+    text-align: center;
+}
+
+.nav__toggle:hover {
+    color: var(--first-color);
+}
+
+.nav__logo {
     color: var(--first-color);
     font-weight: var(--font-medium);
     text-align: center;
@@ -205,15 +195,6 @@ img {
 
 .nav__logo:hover {
     color: var(--title-color);
-}
-
-.nav__toggle {
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-.nav__toggle:hover {
-    color: var(--first-color);
 }
 
 @media screen and (max-width: 767px) {
@@ -224,7 +205,7 @@ img {
         width: 100%;
         background-color: var(--body-color);
         padding: 2rem 1.5rem 4rem;
-        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.25);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: 0.3s;
     }
@@ -265,19 +246,128 @@ img {
     color: var(--first-color-alt);
 }
 
-/* show menu */
 .show-menu {
     bottom: 0;
 }
 
-/* Active link */
 .active-link {
     color: var(--first-color);
 }
 
-/* Change background header */
 .scroll-header {
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================================================ BACKGROUND ANIMATION ================================================================ */
+.circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.circles li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(22, 111, 254, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+    left: 25%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+    left: 40%;
+    width: 18px;
+    height: 18px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+    left: 65%;
+    width: 13px;
+    height: 13px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+    left: 75%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+    left: 35%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+    left: 85%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 10%;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 100%;
+    }
 }
 
 /*==================== HOME ====================*/
@@ -449,6 +539,7 @@ img {
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
 .highlight {
@@ -544,8 +635,7 @@ img {
 
 .skills__list {
     display: grid;
-    grid-template-columns: repeat(auto-fill,
-            minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     /* Adjust the min-width based on your design */
     gap: 20px;
     padding-left: 2.7rem;
@@ -1015,7 +1105,7 @@ img {
     right: -0.5rem;
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets {
+.swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -2.5rem;
 }
 
@@ -1427,8 +1517,8 @@ img {
     }
 
     .Expertise__content {
-        padding-right: .5rem;
-        padding-left: .5rem;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
     }
 
     .Expertise__modal {
@@ -1486,15 +1576,16 @@ img {
         max-width: 350px;
         flex-direction: column;
     }
-    
-    .project__title{
+
+    .project__title {
         font-size: large;
     }
-    
+
     .card {
         width: 100%;
         box-sizing: border-box;
     }
+
     .contact__form {
         grid-template-columns: 1fr;
     }
@@ -1519,7 +1610,7 @@ img {
         padding-right: 1rem;
         padding-left: 1rem;
     }
-    
+
     .Expertise__modal-flex {
         flex-direction: column;
         align-items: center;
@@ -1532,15 +1623,16 @@ img {
     .Expertise__modal-project-content {
         text-align: left;
     }
-    
-    .project__title{
+
+    .project__title {
         font-size: large;
     }
-    
+
     .card {
         width: 100%;
         box-sizing: border-box;
     }
+
     .contact__form {
         grid-template-columns: 1fr;
     }
@@ -1548,11 +1640,25 @@ img {
     .contact__right-bottom {
         grid-column: 1;
     }
+
     .articles__container {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-right: 2rem;
+    }
+
+    .medium-article-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .circles li:nth-child(1),
+    .circles li:nth-child(3),
+    .circles li:nth-child(7),
+    .circles li:nth-child(10) {
+        display: none;
     }
 }
 
@@ -1583,7 +1689,7 @@ img {
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .Expertise__container {
         grid-template-columns: max-content;
         justify-content: center;
@@ -1593,7 +1699,7 @@ img {
         padding-right: 1rem;
         padding-left: 1rem;
     }
-    
+
     .Expertise__modal-flex {
         flex-direction: column;
         align-items: center;
@@ -1683,7 +1789,10 @@ img {
     }
 
     .about__container {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
         column-gap: 5rem;
+        margin-top: 0;
     }
 
     .about__img {
@@ -1796,9 +1905,21 @@ img {
     }
 }
 
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
 /* For large devices */
 @media screen and (min-width: 1024px) {
-
     .header,
     .main,
     .footer__container {
@@ -1833,131 +1954,11 @@ img {
         right: -3.5rem;
     }
 
-    .swiper-container-horizontal>.swiper-pagination-bullets {
+    .swiper-container-horizontal > .swiper-pagination-bullets {
         bottom: 0;
     }
 
     .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-#g-recaptcha-response {
-    display: block !important;
-    position: absolute;
-    margin: -50px 0 0 0 !important;
-    z-index: -999999;
-    opacity: 0;
-}
-
-.circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    /* background: rgba(62, 111, 254, 0.2); */
-    background-color: var(--first-color-blob);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-}
-
-.circles li:nth-child(1) {
-    left: 25%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(2) {
-    left: 10%;
-    width: 10px;
-    height: 10px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-    left: 40%;
-    width: 18px;
-    height: 18px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5) {
-    left: 65%;
-    width: 13px;
-    height: 13px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6) {
-    left: 75%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-    left: 35%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-    left: 50%;
-    width: 10px;
-    height: 10px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-    left: 85%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-@keyframes animate {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 10%;
-    }
-
-    100% {
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 100%;
     }
 }
