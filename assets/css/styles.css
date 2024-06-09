@@ -1033,7 +1033,8 @@ img {
 /*==================== ARTICLES ====================*/
 .swiper-container {
     width: 100%;
-    padding: 0.5rem;
+    max-width: 100%; 
+    padding: 2rem 0;
     margin: auto;
 }
 
@@ -1045,6 +1046,7 @@ img {
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 100%; 
 }
 
 .article__card {
@@ -1053,7 +1055,7 @@ img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 90%;
-    min-width: 250px;
+    max-width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -1449,11 +1451,6 @@ img {
         font-size: large;
     }
 
-    .card {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
     .contact__form {
         grid-template-columns: 1fr;
     }
@@ -1529,7 +1526,7 @@ img {
     }
 
     .article__card {
-        width: 100%;
+        width: 90%;
         max-width: none;
     }
 }
@@ -1666,6 +1663,12 @@ img {
         width: 1500px;
         max-height: 80vh;
         overflow-y: auto;
+    }
+
+    .article__card {
+        width: 90%;
+        max-width: none;
+        min-width: 250px;
     }
 
     .project {
