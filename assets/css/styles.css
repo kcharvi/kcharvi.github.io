@@ -882,6 +882,72 @@ img {
     display: flex;
 }
 
+
+/*==================== Achievement ====================*/
+.Achievement__container{
+    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Default to single column */
+    justify-items: stretch; /* Make items fill the column width */
+}
+
+.Achievement__content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--container-color);
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    transition: .3s;
+    width: 100%; /* Ensure card takes full width in single column */
+}
+
+.Achievement__content:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+.Achievement__icon{
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-right: var(--mb-0-5);
+    flex-shrink: 0;
+}
+
+.Achievement__title{
+    font-size: var(--h3-font-size);
+    margin-bottom: 0;
+    font-weight: var(--font-medium);
+    display: flex;
+    align-items: center;
+}
+
+.achievement__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--mb-0-5);
+    min-height: 6rem;
+}
+
+.Achievement__button{
+    cursor: pointer;
+    font-size: var(--small-font-size);
+    margin-top: auto; 
+}
+
+.Achievement__button:hover .button__icon{
+    transform: translateX(.25rem);
+}
+
+.achievement__award_desc {
+    padding: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.achievement__calendar {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    font-weight: var(--font-semi-bold);
+}
+
 /*======================================================== Expertise ========================================================*/
 .Expertise__container {
     gap: 1.5rem;
@@ -1517,9 +1583,7 @@ img {
     }
     .qualification__subtitle,
     .qualification__calendar,
-    .qualification__GPA,
-    .qualification__award_desc,
-    .qualification__award__desc { /* Target all relevant text elements */
+    .qualification__GPA { /* Target all relevant text elements */
         font-size: var(--smaller-font-size); /* Smaller text */
     }
      .qualification__tabs {
@@ -1607,6 +1671,10 @@ img {
         justify-content: center;
     }
 
+    .Achievement__container {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: initial;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1827,6 +1895,11 @@ img {
     .footer__copy {
         margin-top: 4.54.5;
     }
+
+    .Achievement__container {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: initial;
+    }
 }
 
 @media screen and (max-width: 968px) {
@@ -1892,5 +1965,9 @@ img {
 
     .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Achievement__container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
