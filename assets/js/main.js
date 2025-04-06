@@ -1,6 +1,6 @@
 /*==================== THEME SWITCH ====================*/
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Function to play sound
     function playSound(sound) {
         const audio = new Audio(sound);
@@ -8,37 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Check for saved theme in local storage
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         document.body.classList.add(savedTheme);
     } else {
         // Set default theme to light if no theme is saved
-        document.body.classList.add('light-theme');
+        document.body.classList.add("light-theme");
     }
 
     // Theme change button
-    const themeButton = document.getElementById('theme-button');
+    const themeButton = document.getElementById("theme-button");
 
-    themeButton.addEventListener('click', () => {
+    themeButton.addEventListener("click", () => {
         // Check if the current theme is light before toggling
-        const isDarkTheme = document.body.classList.contains('light-theme');
+        const isDarkTheme = document.body.classList.contains("light-theme");
 
         // Toggle theme
-        document.body.classList.toggle('light-theme');
+        document.body.classList.toggle("light-theme");
 
         // Check if the theme changed
-        const themeChanged = isDarkTheme !== document.body.classList.contains('light-theme');
+        const themeChanged = isDarkTheme !== document.body.classList.contains("light-theme");
 
         // Play sound only if the theme changed due to the button click
         if (themeChanged) {
-            playSound('assets/sound/switch.mp3');
+            playSound("assets/sound/switch.mp3");
         }
 
         // Save theme preference to local storage
-        if (document.body.classList.contains('light-theme')) {
-            localStorage.setItem('theme', 'light-theme');
+        if (document.body.classList.contains("light-theme")) {
+            localStorage.setItem("theme", "light-theme");
         } else {
-            localStorage.setItem('theme', 'light-theme');
+            localStorage.setItem("theme", "light-theme");
         }
     });
 });
@@ -75,24 +75,27 @@ function linkAction() {
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*==================== ACCORDION SKILLS ====================*/
-document.addEventListener('DOMContentLoaded', () => {
-    const skillsHeader = document.querySelectorAll('.skills__header');
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsHeader = document.querySelectorAll(".skills__header");
 
-    skillsHeader.forEach(header => {
-        header.addEventListener('click', () => {
+    skillsHeader.forEach((header) => {
+        header.addEventListener("click", () => {
             const content = header.parentNode;
-            content.classList.toggle('skills__open');
-            content.classList.toggle('skills__close');
+            content.classList.toggle("skills__open");
+            content.classList.toggle("skills__close");
 
-            const arrow = header.querySelector('.skills__arrow');
-            arrow.style.transform = content.classList.contains('skills__open') ? 'rotate(-180deg)' : 'rotate(0deg)';
+            const arrow = header.querySelector(".skills__arrow");
+            arrow.style.transform = content.classList.contains("skills__open")
+                ? "rotate(-180deg)"
+                : "rotate(0deg)";
         });
     });
 
-    document.querySelectorAll('.skill__circle').forEach(circle => {
-        let percentage = circle.getAttribute('data-percentage');
+    document.querySelectorAll(".skill__circle").forEach((circle) => {
+        let percentage = circle.getAttribute("data-percentage");
         let circumference = 2 * Math.PI * 24; // Calculate the circumference using the radius
-        circle.querySelector('circle:last-child').style.strokeDashoffset = circumference - (circumference * percentage / 100);
+        circle.querySelector("circle:last-child").style.strokeDashoffset =
+            circumference - (circumference * percentage) / 100;
     });
 });
 
@@ -161,14 +164,55 @@ modalCloses.forEach((modalClose) => {
     });
 });
 
+/*==================== IMAGE POPUP MODAL ====================*/
+const imageModal = document.getElementById("image-modal");
+const modalImg = document.getElementById("modal-img");
+const imageModalClose = document.getElementById("image-modal-close");
+const projectImages = document.querySelectorAll(".project-image-popup");
+
+// Function to open the modal
+function openImageModal(imgSrc) {
+    modalImg.src = imgSrc;
+    imageModal.classList.add("show-modal");
+}
+
+// Function to close the modal
+function closeImageModal() {
+    imageModal.classList.remove("show-modal");
+    // Optional: Clear the src attribute when closing
+    // modalImg.src = "";
+}
+
+// Add click listeners to all designated project images
+projectImages.forEach((img) => {
+    img.addEventListener("click", () => {
+        openImageModal(img.src);
+    });
+});
+
+// Add click listener to the close button
+if (imageModalClose) {
+    imageModalClose.addEventListener("click", closeImageModal);
+}
+
+// Add click listener to the modal background to close it
+if (imageModal) {
+    imageModal.addEventListener("click", (event) => {
+        // Close only if the click is on the modal background itself, not the content
+        if (event.target === imageModal) {
+            closeImageModal();
+        }
+    });
+}
+
 /*==================== ARTICLES SWIPER  ====================*/
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper(".swiper-container", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     breakpoints: {
         568: {
