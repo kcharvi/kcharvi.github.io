@@ -341,3 +341,25 @@ document.getElementById("check").onclick = function () {
         alert("Fill all the fields");
     }
 };
+
+/*==================== DYNAMIC FOOTER DATE ====================*/
+document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+    const today = new Date();
+    const options = { month: "long", day: "numeric" };
+    const formattedDate = today.toLocaleDateString("en-US", options);
+
+    const footerYearSpan = document.getElementById("footer-year");
+    const lastUpdatedDateSpan = document.getElementById("last-updated-date");
+    const lastUpdatedYearSpan = document.getElementById("last-updated-year");
+
+    if (footerYearSpan) {
+        footerYearSpan.textContent = currentYear;
+    }
+    if (lastUpdatedDateSpan) {
+        lastUpdatedDateSpan.textContent = formattedDate; // e.g., "June 10"
+    }
+    if (lastUpdatedYearSpan) {
+        lastUpdatedYearSpan.textContent = currentYear;
+    }
+});
