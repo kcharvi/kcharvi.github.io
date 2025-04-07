@@ -5,8 +5,6 @@ I have showcased my skills, projects, and qualifications in a clean and interact
 
 
 ### Preview of the <a href="https://kcharvi.github.io/">Website</a>
-![Website Preview](assets/img/portfolio_preview.png)
-
 
 ## Components
 
