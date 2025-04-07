@@ -781,102 +781,76 @@ body.dark-theme .circles li {
 
 /*======================================================= SKILLS ======================================*/
 .skills__container {
-    row-gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    row-gap: 2rem; /* Add some row gap */
 }
 
-.skills__header {
+.skill__card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill__card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,.15);
+}
+
+.skill__card-header {
     display: flex;
     align-items: center;
-    margin-bottom: var(--mb-2-5);
-    cursor: pointer;
+    margin-bottom: var(--mb-1-5);
+    gap: var(--mb-0-75);
 }
 
-.skills__icon,
-.skills__arrow {
+.skill__card-icon {
     font-size: 2rem;
     color: var(--first-color);
 }
 
-.skills__icon {
-    margin-right: var(--mb-0-75);
-}
-
-.skills__title {
+.skill__card-title {
     font-size: var(--h3-font-size);
+    margin-bottom: 0; /* Remove default margin */
 }
 
-.skills__subtitle {
+.skill__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust minmax as needed */
+    gap: var(--mb-1);
+    margin-top: auto; /* Push list to bottom if card height varies */
+}
+
+.skill__item {
+    background-color: var(--body-color);
+    padding: var(--mb-0-5) var(--mb-0-75);
+    border-radius: 0.5rem;
+    text-align: center;
     font-size: var(--small-font-size);
-    color: var(--text-color-light);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    transition: background-color 0.3s, color 0.3s;
+    overflow-wrap: break-word;
 }
 
-.skills__arrow {
-    margin-left: auto;
-    transition: 0.4s;
+.skill__item:hover {
+    background-color: var(--first-color-lighter);
+    color: #fff;
 }
 
-.skills__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 20px;
-    padding-bottom: 30px;
+/* Dark theme adjustments for skills */
+body.dark-theme .skill__item {
+    background-color: var(--body-color);
+    color: var(--title-color);
 }
 
-.skills__close .skills__list {
-    display: none;
+body.dark-theme .skill__item:hover {
+    background-color: var(--first-color-lighter);
+    color: var(--first-color-second);
 }
-
-.skills__open .skills__list {
-    display: grid;
-}
-
-.skills__open .skills__arrow {
-    transform: rotate(-180deg);
-}
-
-.skill__data {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8px;
-}
-
-.skill__circle[data-percentage="95"] svg circle:last-child {
-    stroke-dashoffset: calc(213 - (213 * 95) / 100);
-}
-
-.people__skills {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-left: 2.7rem;
-    padding-bottom: 50px;
-}
-
-.people__skill__data {
-    display: flex;
-    flex-direction: row;
-    margin-left: 20px;
-}
-
-.people__skill__icon {
-    color: var(--first-color);
-}
-
-.people__skill__name {
-    text-align: left;
-    margin-left: 8px;
-    flex: 1;
-}
-
-.skills__close .people__skills {
-    display: none;
-}
-
-.skills__open .people-skills {
-    display: flex;
-}
-
 
 /*==================== Achievement ====================*/
 .Achievement__container{
@@ -1678,7 +1652,7 @@ body.dark-theme .circles li {
 
 @media screen and (max-width: 768px) {
     .about__img {
-        width: 200px;
+        width: 300px;
     }
     .Expertise__container {
         grid-template-columns: max-content;
