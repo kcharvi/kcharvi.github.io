@@ -361,7 +361,7 @@ img {
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(22, 111, 254, 0.2);
+    background: #ced9dd;
     animation: animate 25s linear infinite;
     bottom: -150px;
 }
@@ -453,6 +453,10 @@ img {
         opacity: 0;
         border-radius: 100%;
     }
+}
+
+body.dark-theme .circles li {
+    background: #2c4047;
 }
 
 /*======================================================================= HOME ======================================*/
@@ -572,18 +576,9 @@ img {
 }
 
 /*================================================================ ABOUT ========================================================*/
-.about__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--container-color);
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
-}
 
 .about__img {
-    width: 150px;
+    width: 300px;
     border-radius: 1rem;
     justify-self: center;
     align-self: center;
@@ -596,8 +591,8 @@ img {
 
 .about__info {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: var(--mb-1-5);
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
 }
 
 .about__info-title {
@@ -1599,6 +1594,10 @@ img {
 }
 
 @media screen and (max-width: 568px) {
+    .home__scroll {
+        display: none;
+    }
+
     .about__container {
         padding: 1rem 1rem 2rem 1rem;
     }
@@ -1667,7 +1666,7 @@ img {
 
     .qualification__sections {
         display: grid;
-        grid-template-columns: 0.6fr;
+        grid-template-columns: .8fr;
         justify-content: center;
     }
 
@@ -1678,6 +1677,9 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+    .about__img {
+        width: 200px;
+    }
     .Expertise__container {
         grid-template-columns: max-content;
         justify-content: center;
@@ -1786,12 +1788,12 @@ img {
     .about__container {
         grid-template-columns: 1fr 1fr;
         text-align: left;
-        column-gap: 5rem;
+        column-gap: 2rem;
         margin-top: 0;
     }
 
     .about__img {
-        width: 150px;
+        width: 300px;
     }
 
     .about__description {
@@ -1816,7 +1818,7 @@ img {
     }
 
     .qualification__sections {
-        grid-template-columns: 0.5fr;
+        grid-template-columns: .8fr;
     }
 
     .Expertise__showcase {

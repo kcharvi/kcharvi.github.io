@@ -3,6 +3,16 @@
 
 <head>
     <!--==================== META ====================-->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TKRZ4MSCMB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-TKRZ4MSCMB');
+    </script>
+    
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/img/CK_logo.png"> <!-- Favicon -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,7 +84,7 @@
                     </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="uil uil-estate nav__icon"></i> Contact
+                            <i class="uil uil-message nav__icon"></i> Contact
                         </a>
                     </li>
                 </ul>
@@ -149,13 +159,9 @@
                     </div>
 
                     <div class="home__data">
-                        <h3 class="home__subtitle">Hey there! I'm</h3>
+                        <h4 class="home__subtitle">Hey there! I'm</h4>
                         <h1 class="home__title">Charvi Kusuma</h1>
                         <p class="home__description"></p>
-                        <p class="home__description">I'm deeply invested in optimizing and building efficient AI systems, developing deep learning models, 
-                            and tackling big data challenges to drive impactful solutions. I actively explore and work on side projects to stay up to date 
-                            with the latest AI trends like LLMs, RAG while continuously strengthening my foundational knowledge.
-                        </p>
                         <p class="home__description">I graduated from University at Buffalo with 🎓Masters degree in Computer Science and Engineering. 
                                                      During my undergraduate studies I was awarded the 🏅Chancellor's Gold Medal for the Best Outgoing 
                                                      Student for the batch of 2023 at VIT, India.
@@ -163,6 +169,13 @@
                         
                         <br>
                     </div>
+                </div>
+                <div class="home_scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
                 </div>
             </div>
             <ul class="circles">
@@ -185,27 +198,19 @@
             <span class="section__subtitle">My introduction</span>
 
             <div class="about__container container grid">
-                <img src="assets/animation/robot_animation.gif" alt="" class="about__img">
+                <img src="assets/img/about_me.jpg" alt="" class="about__img">
 
                 <div class="about__data">
                     <p class="about__description">
-                        I'm into using AI and ML to build meaningful solutions that helps
-                        people. I was fascinated by the extent of applications in this
-                        field when I started in 2019. Through every project, I've honed my ability to quickly acquire and apply knowledge to drive progress. 
-                        I cultivated  a deep understanding of core technologies of CSE including
-                        applications of OOPs in programming, Software Engineering,
-                        end-to-end applications as a product, and finally AI/Machine Learning with research.
-                    </p>
-                    <p class="about__description">
-                        Today, after completing 3 internships and working on numerous academic projects, I'm more equipped
-                        than ever to contribute in Software Development and AI/ML roles. My ability to quickly understand new concepts
-                        has consistently played a key role in my success, allowing me to tackle challenges head-on and make meaningful contributions.
+                        Passionate AI/ML developer focused on building efficient deep learning models and 
+                        solving big data challenges. Constantly exploring new trends like LLMs and RAG through 
+                        hands-on projects.
                     </p>
 
                     <div class="about__info">
                         <div>
-                            <span class="about__info-title">3</span>
-                            <span class="about__info-name">Strong Internship <br> Experiences </span>
+                            <span class="about__info-title">4</span>
+                            <span class="about__info-name">Internships and <br> Research Experience</span>
                         </div>
 
                         <div>
@@ -225,6 +230,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!--==================== QUALIFICATIONS ====================-->
@@ -267,25 +273,6 @@
                                 <div class="qualification__GPA">
                                     <h5>3.96/4.0 (AI/ML Track)</h5>
                                 </div>
-                                <div class="qualification__desc">
-                                    <h5>Graduate Student Assistant</h5>
-                                        <span class="button button--flex button--small button--link Qualification__button">
-                                            Learn More<i class="uil uil-arrow-right button__icon"></i>
-                                        </span>
-        
-                                        <div class="Qualification__modal">
-                                            <div class="Qualification__modal-content">
-                                                <i class="uil uil-times Qualification__modal-close"></i>
-                                                <ul class="Qualification__modal-qualification grid">
-                                                    <li class="Qualification__modal-service">
-                                                        <i class="uil uil-check-circle Qualification__modal-icon"></i>
-                                                        <p>Collaborated with 200+ students, providing resources and mentorship in Data Intensive
-                                                            Computing projects on machine learning and big data frameworks (Hadoop, MapReduce, Spark) for Fall 2024.
-                                                        </p>
-                                                    </li>
-                                            </div>
-                                        </div>
-                                </div>
                             </div>
 
                             <div>
@@ -324,6 +311,67 @@
 
                         <!--===============================QUALIFICATION 1 ===========================-->
                         <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Research Assistant,</h3>
+                                <h3 class="qualification__title">Graduate Student Assistant</h3>
+                                <span class="qualification__subtitle">
+                                    <h4 class="qualification__GPA">University at Buffalo</h4>
+                                </span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Jan 2024 - Present (> 1year),
+                                </div>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Aug 2024 - Dec 2024 (6 months)
+                                </div>
+                                <span class="button button--flex button--small button--link Qualification__button">
+                                    Learn More<i class="uil uil-arrow-right button__icon"></i>
+                                </span>
+
+                                <div class="Qualification__modal">
+                                    <div class="Qualification__modal-content">
+                                        <h4 class="Qualification__modal-title">Research Assistant</h4>
+                                        <i class="uil uil-times Qualification__modal-close"></i>
+
+                                        <ul class="Qualification__modal-qualification grid">
+                                            <li class="Qualification__modal-service">
+                                                <i class="uil uil-check-circle Qualification__modal-icon"></i>
+                                                <a class="qualification__GPA"
+                                                    href="https://drive.google.com/file/d/1OdlkHLO_3yCOOnBdFt_hNjFIrBBMPbwe/view?usp=drive_link"
+                                                    title="Certificate" target="_blank">
+                                                    Awarded with Best MS Research Project during CSE Demo Days</a>
+                                            </li>
+                                            <li class="Qualification__modal-service">
+                                                <i class="uil uil-check-circle Qualification__modal-icon"></i>
+                                                <p>Led 3 novel research projects and developed end-to-end Machine Learning application with 21 models 
+                                                    incorporating LDA for topic modeling and LSTM for temporal analysis.
+                                                </p>
+                                            </li>
+
+                                            <li class="Qualification__modal-service">
+                                                <i class="uil uil-check-circle Qualification__modal-icon"></i>
+                                                <p>Collaborated with 200+ students, providing resources and mentorship in Data Intensive
+                                                    Computing projects on machine learning and big data frameworks (Hadoop, MapReduce, Spark) for Fall 2024.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!--===============================QUALIFICATION 2 ===========================-->
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                            </div>
                             <div>
                                 <h3 class="qualification__title">Software Development and Operations Intern</h3>
                                 <span class="qualification__subtitle">
@@ -389,20 +437,10 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
                         </div>
 
-                        <!--===============================QUALIFICATION 2 ===========================-->
+                        <!--===============================QUALIFICATION 3 ===========================-->
                         <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <!-- <span class="qualification__line"></span> -->
-                            </div>
 
                             <div>
                                 <h3 class="qualification__title">Software Engineering Program(SEP) Intern</h3>
@@ -462,10 +500,20 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
                         </div>
 
-                        <!--===============================QUALIFICATION 3 ===========================-->
+                        <!--===============================QUALIFICATION 4 ===========================-->
                         <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
                             <div>
                                 <h3 class="qualification__title">Research Intern</h3>
                                 <span class="qualification__subtitle">
@@ -527,17 +575,6 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                        </div>
-                        <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
                             </div>
                         </div>
                     </div>
