@@ -6,22 +6,22 @@
     --header-height: 3rem;
 
     /*========== Colors ==========*/
-    /* Palette: #EAEBED (Light Grey), #006989 (Dark Teal), #7095a3 (Muted Blue/Grey) */
-    --first-color: #006989;         /* Dark Teal */
-    --first-color-second: #006989;  /* Dark Teal */
-    --first-color-alt: #7095a3;     /* Muted Blue/Grey */
-    --first-color-lighter: #7095a3; /* Muted Blue/Grey */
-    --first-color-blob: #7095a3;    /* Light Grey */
-    --title-color: #1A202C;         /* Dark Grey/Black */
-    --text-color: #2D3748;          /* Dark Grey */
-    --text-color-light: #7095a3;    /* Muted Blue/Grey */
-    --input-color: #FFFFFF;         /* White */
-    --body-color: #EAEBED;          /* Light Grey */
-    --container-color: #FFFFFF;     /* White */
-    --scroll-bar-color: #D5D9DA;    /* Lighter Grey (derived) */
-    --scroll-thumb-color: #BCC1C3;   /* Medium Grey (derived) */
-    --scrollup-color: #006989;      /* Dark Teal */
-    --header-scroll-bg: rgba(234, 235, 237, 0.4); /* Light theme base: #EAEBED with alpha */
+    /* Palette: Gradient - #1B8CFE (Blue) -> #5BAEFD -> #B4D4FE -> #FDE0C3 (Peach) | Dark BG: #282828 */
+    --first-color: #1B8CFE;         /* Bright Blue */
+    --first-color-second: #1B8CFE;  /* Bright Blue */
+    --first-color-alt: #5BAEFD;     /* Medium Light Blue */
+    --first-color-lighter: #91bef8; /* Very Light Blue */
+    --first-color-blob: #FDE0C3;    /* Pale Peach */
+    --title-color: #282828;         /* Dark Grey/Black (from dark bg for contrast) */
+    --text-color: #4A4A4A;          /* Medium Dark Grey */
+    --text-color-light: #777777;    /* Medium Grey */
+    --input-color: #f5e3d0;         /* White */
+    --body-color: #f8f8f8;          /* Very Light Grey / Off-White */
+    --container-color: #eaeaea;     /* White */
+    --scroll-bar-color: #F0F0F0;    /* Lighter Grey (derived) */
+    --scroll-thumb-color: #DCDCDC;   /* Medium Grey (derived) */
+    --scrollup-color: #1B8CFE;      /* Bright Blue */
+    --header-scroll-bg: rgba(253, 253, 253, 0.4); /* Light theme base: #FDFDFD with alpha */
     --header-scroll-blur: 10px; /* Blur amount */
 
     --body-font: "Poppins", sans-serif;
@@ -55,22 +55,22 @@
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-    /* Palette: #EAEBED (Light Grey), #006989 (Dark Teal), #7095a3 (Muted Blue/Grey) */
-    --first-color: #006989;         /* Dark Teal (Check contrast) */
-    --first-color-second: #003445;  /* Very Dark Teal (derived) */
-    --first-color-alt: #A3BAC3;     /* Muted Blue/Grey */
-    --first-color-lighter: #A3BAC3; /* Muted Blue/Grey */
-    --first-color-blob: #3E4C51;    /* Dark Muted Blue/Grey (derived) */
-    --title-color: #EAEBED;         /* Light Grey */
-    --text-color: #A3BAC3;          /* Muted Blue/Grey */
-    --text-color-light: #87979E;    /* Lighter Muted Blue/Grey (derived) */
-    --input-color: #2D3748;          /* Dark Grey Input */
-    --body-color: #1A202C;          /* Very Dark Grey Body */
-    --container-color: #2D3748;     /* Slightly Lighter Dark Grey Container */
-    --scroll-bar-color: #4A5568;    /* Medium Dark Grey */
-    --scroll-thumb-color: #A3BAC3;  /* Muted Blue/Grey */
-    --scrollup-color: #A3BAC3;      /* Muted Blue/Grey */
-    --header-scroll-bg: rgba(26, 32, 44, 0.8); /* Dark theme base: #1A202C with alpha */
+    /* Palette: Gradient - #1B8CFE (Blue) -> #5BAEFD -> #B4D4FE -> #FDE0C3 (Peach) | Dark BG: #282828 */
+    --first-color: #1B8CFE;         /* Bright Blue (Good contrast on dark) */
+    --first-color-second: #105096;  /* Darker Blue (derived for dark elements) */
+    --first-color-alt: #5BAEFD;     /* Medium Light Blue (Good contrast) */
+    --first-color-lighter: #B4D4FE; /* Very Light Blue (Good contrast) */
+    --first-color-blob: #FDE0C3;    /* Pale Peach (Stands out on dark) */
+    --title-color: #f2dfdf;         /* Very Light Grey / Off-White (from light body) */
+    --text-color: #CCCCCC;          /* Light Grey */
+    --text-color-light: #999999;    /* Medium Grey */
+    --input-color: #383838;          /* Dark Grey Input */
+    --body-color: #282828;          /* Very Dark Grey Body (from palette BG) */
+    --container-color: #383838;     /* Slightly Lighter Dark Grey Container */
+    --scroll-bar-color: #484848;    /* Medium Dark Grey */
+    --scroll-thumb-color: #888888;  /* Medium Grey */
+    --scrollup-color: #5BAEFD;      /* Medium Light Blue (better visibility on dark) */
+    --header-scroll-bg: rgba(40, 40, 40, 0.8); /* Dark theme base: #282828 with alpha */
 }
 
 /*========== Button Dark/Light ==========*/
@@ -837,7 +837,7 @@ body.dark-theme .circles li {
 }
 
 .skill__item:hover {
-    background-color: var(--first-color-lighter);
+    background-color: var(--first-color);
     color: #fff;
 }
 
@@ -1414,7 +1414,7 @@ body.dark-theme .skill__item:hover {
 .footer__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: var(--first-color-lighter);
 }
 .footer__title,
 .footer__subtitle,
