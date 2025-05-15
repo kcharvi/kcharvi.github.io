@@ -460,6 +460,13 @@ body.dark-theme .circles li {
 }
 
 /*======================================================================= HOME ======================================*/
+.home.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .home__container {
     gap: 1rem;
     display: flex;
@@ -1568,7 +1575,7 @@ body.dark-theme .skill__item:hover {
 }
 
 @media screen and (max-width: 568px) {
-    .home__scroll {
+    .home_scroll {
         display: none;
     }
 
@@ -1879,7 +1886,7 @@ body.dark-theme .skill__item:hover {
 }
 
 @media screen and (max-width: 968px) {
-    .home__scroll {
+    .home_scroll {
         display: none;
     }
 }
