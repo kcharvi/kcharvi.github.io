@@ -930,7 +930,7 @@ body.dark-theme .skill__item:hover {
     flex-direction: row;
     align-items: flex-start;
     padding: 1.5rem;
-    gap: 1.5rem;
+    gap: 1rem;
     height: 350px; 
     min-height: auto; 
     overflow: hidden; 
@@ -1547,6 +1547,12 @@ body.dark-theme .skill__item:hover {
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
+    :root {
+        --normal-font-size: 0.813rem;
+        --small-font-size: 0.75rem;
+        --smaller-font-size: 0.6875rem;
+        --h3-font-size: 0.9rem;
+    }
     .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
@@ -1618,24 +1624,26 @@ body.dark-theme .skill__item:hover {
     .contact__right-bottom {
         grid-column: 1;
     }
+    
     .swiper-container--works {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
-        padding: 2rem 0 1rem;
+        padding: 2rem 0 0.5rem;
     }
 
     .presentation__card {
         flex-direction: column;
         text-align: center;
-        height: 320px; 
-        padding: 1rem;
+        align-items: center;
+        height: 400px; 
+        padding: 0.8rem;
         gap: 0.8rem;
         box-shadow: 0 2px 5px rgba(0,0,0,.1); 
     }
 
     .presentation__card img {
         width: 90%;
-        height: 120px; 
+        height: 110px; 
         object-fit: cover;
         border-radius: 0.6rem;
     }
@@ -1643,6 +1651,8 @@ body.dark-theme .skill__item:hover {
     .presentation__card .presentation__content {
         text-align: justify;
         padding-bottom: 0.5rem;
+        flex-grow: 1;
+        max-height: calc(100% - 140px - 0.6rem - (var(--h3-font-size) * 1.2 * 2) - 0.3rem - (0.8rem * 2) - 0.5rem);
     }
 
     .presentation__card .presentation__content::-webkit-scrollbar {
@@ -1650,23 +1660,29 @@ body.dark-theme .skill__item:hover {
     }
 
     .presentation__card h4 {
-        font-size: x-small;
+        font-size: var(--h3-font-size);
         margin-bottom: 0.3rem;
         white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        min-height: calc(var(--h3-font-size) * 1.2 * 2);
     }
 
     .presentation__card p {
-        font-size: xx-small;
+        font-size: var(--normal-font-size);
         display: block;
         margin-top: 0; 
+        -webkit-line-clamp: unset; 
+        line-clamp: unset;
     }
 
     .swiper-button-next,
     .swiper-button-prev {
         width: 15px; 
-        height: 20px; 
+        height: 20px;
+        padding: 3px; 
         margin: 0 3px;
         opacity: 0.6; 
     }
@@ -1732,7 +1748,7 @@ body.dark-theme .skill__item:hover {
         text-align: center;
         padding: 1.2rem;
         align-items: center;
-        height: 430px; 
+        height: 470px; 
         min-height: auto;
     }
     .presentation__card img {
@@ -2103,7 +2119,6 @@ body.dark-theme .skill__item:hover {
 
     .home__container {
         row-gap: 5rem;
-        /* height: calc(100vh - var(--header-height)); */
     }
 
     .home__content {
@@ -2112,7 +2127,6 @@ body.dark-theme .skill__item:hover {
 
 }
 
-/* For large devices */
 @media screen and (min-width: 1024px) {
 
     .header,
