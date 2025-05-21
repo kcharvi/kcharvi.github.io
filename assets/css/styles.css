@@ -986,6 +986,16 @@ body.dark-theme .skill__item:hover {
     flex-grow: 1;
 }
 
+.presentation__calendar {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+    font-weight: var(--font-semi-bold);
+}
+
+.dark-theme .presentation__calendar{
+    color: var(--first-color);
+}
+
 .swiper-container--works {
         color: var(--first-color-alt);
         width: auto;
@@ -1309,19 +1319,20 @@ body.dark-theme .skill__item:hover {
 }
 
 .dark-theme .article__card {
+    background-color: var(--container-color);
     color: #fff;
-    /* White text for dark theme */
 }
 
 .dark-theme .swiper-button-next,
 .dark-theme .swiper-button-prev {
-    color: #fff;
+    color: #fff);
 }
 
-.dark-theme .article__card h4,
+.dark-theme .article__card h4{
+    color: var(--title-color);
+}
 .dark-theme .article__card p {
     color: #fff;
-    /* White text for dark theme */
 }
 
 /*==================== PROJECT IN MIND ====================*/
