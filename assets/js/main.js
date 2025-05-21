@@ -164,6 +164,24 @@ modalCloses.forEach((modalClose) => {
     });
 });
 
+/*==================== ACHEIVEMENTS SWIPER ====================*/
+document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.swiper-container--works', {
+        slidesPerView: 1, 
+        spaceBetween: 30, 
+        loop: true, 
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+});
+
+
 /*==================== IMAGE POPUP MODAL ====================*/
 const imageModal = document.getElementById("image-modal");
 const modalImg = document.getElementById("modal-img");

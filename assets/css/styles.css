@@ -274,7 +274,7 @@ img {
     color: var(--title-color);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .nav__menu {
         position: fixed;
         bottom: 0;
@@ -340,7 +340,7 @@ img {
 .scroll-header {
     background-color: var(--header-scroll-bg);
     backdrop-filter: blur(var(--header-scroll-blur));
-    -webkit-backdrop-filter: blur(var(--header-scroll-blur)); /* For Safari */
+    -webkit-backdrop-filter: blur(var(--header-scroll-blur));
 }
 
 /* ================================================================ BACKGROUND ANIMATION ================================================================ */
@@ -924,6 +924,82 @@ body.dark-theme .skill__item:hover {
     font-weight: var(--font-semi-bold);
 }
 
+/*==================== ARTICLES / PRESENTATION CARD COMMON STYLES ====================*/
+.presentation__card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    height: 350px; 
+    min-height: auto; 
+    overflow: hidden; 
+    position: relative;
+    background: var(--container-color);
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.15);
+    transition: box-shadow .3s;
+}
+
+.presentation__card:hover {
+    box-shadow: 0 6px 8px rgba(0,0,0,.15);
+}
+
+.presentation__card img {
+    width: 40%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 0.8rem;
+    flex-shrink: 0;
+}
+
+.presentation__card .presentation__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden; 
+}
+
+.presentation__card h4 {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; 
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: var(--title-color);
+}
+
+.presentation__card p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 12; 
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.swiper-container--works {
+        color: var(--first-color-alt);
+        width: auto;
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+        padding-bottom: 2.5rem; 
+    }
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.5rem; 
+    font-weight: 900; 
+    color: inherit; 
+}
+
 /*======================================================== Expertise ========================================================*/
 .Expertise__container {
     gap: 1.5rem;
@@ -1176,18 +1252,15 @@ body.dark-theme .skill__item:hover {
 
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--first-color);
-    background: rgba(255, 255, 255, 0.5);
+    color: var(--first-color-alt);
     border-radius: 50%;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    color: var(--first-color-alt);
-    background: rgba(255, 255, 255, 0.8);
+    color: var(--first-color);
 }
 
 .swiper-button-next,
@@ -1236,7 +1309,6 @@ body.dark-theme .skill__item:hover {
 }
 
 .dark-theme .article__card {
-    background: var(--input-color);
     color: #fff;
     /* White text for dark theme */
 }
@@ -1546,30 +1618,102 @@ body.dark-theme .skill__item:hover {
     .contact__right-bottom {
         grid-column: 1;
     }
+    .swiper-container--works {
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+        padding: 2rem 0 1rem;
+    }
+
+    .presentation__card {
+        flex-direction: column;
+        text-align: center;
+        height: 320px; 
+        padding: 1rem;
+        gap: 0.8rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1); 
+    }
+
+    .presentation__card img {
+        width: 90%;
+        height: 120px; 
+        object-fit: cover;
+        border-radius: 0.6rem;
+    }
+
+    .presentation__card .presentation__content {
+        text-align: justify;
+        padding-bottom: 0.5rem;
+    }
+
+    .presentation__card .presentation__content::-webkit-scrollbar {
+        display: none;
+    }
+
+    .presentation__card h4 {
+        font-size: x-small;
+        margin-bottom: 0.3rem;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .presentation__card p {
+        font-size: xx-small;
+        display: block;
+        margin-top: 0; 
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 15px; 
+        height: 20px; 
+        margin: 0 3px;
+        opacity: 0.6; 
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1rem; 
+    }
+
+    .swiper-container--works .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-container--works .swiper-button-next {
+        right: 0;
+    }
+
+    .dark-theme .swiper-button-next,
+    .dark-theme .swiper-button-prev {
+        color: #fff;
+    }
+    
+    .swiper-pagination {
+        bottom: 0.25rem;
+    }
 }
 
-/* Specific adjustments for screens <= 450px to prevent qualification overlap */
 @media screen and (max-width: 450px) {
     .qualification__data {
-        column-gap: 0.75rem; /* Reduced gap */
+        column-gap: 0.75rem;
     }
     .qualification__title {
-        font-size: var(--small-font-size); /* Smaller title */
-        line-height: 1.3; /* Adjust line height if titles wrap */
+        font-size: var(--small-font-size); 
+        line-height: 1.3;
     }
     .qualification__subtitle,
     .qualification__calendar,
-    .qualification__GPA { /* Target all relevant text elements */
-        font-size: var(--smaller-font-size); /* Smaller text */
+    .qualification__GPA { 
+        font-size: var(--smaller-font-size);
     }
      .qualification__tabs {
-        gap: 0.2rem; /* Reduce gap between tabs */
+        gap: 0.2rem; 
     }
     .qualification__button {
-        font-size: var(--small-font-size); /* Smaller tab text */
+        font-size: var(--small-font-size);
     }
     .qualification__icon {
-        font-size: 1.5rem; /* Smaller tab icons */
+        font-size: 1.5rem; 
         margin-right: var(--mb-0-25);
     }
 }
@@ -1581,6 +1725,56 @@ body.dark-theme .skill__item:hover {
 
     .about__container {
         padding: 1rem 1rem 2rem 1rem;
+    }
+
+    .presentation__card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+        align-items: center;
+        height: 430px; 
+        min-height: auto;
+    }
+    .presentation__card img {
+        align-items: center;
+        width: 60%;
+        height: 220px;
+    }
+    .presentation__card .presentation__content {
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .presentation__card .presentation__content::-webkit-scrollbar {
+        display: none;
+    }
+    .presentation__card h4 {
+        font-size: small;
+    }
+    .presentation__card p {
+        font-size: smaller;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 15px;
+        height: 20px;
+        font-size: 1rem;
+        padding: 7px;
+        margin: 0 8px;
+        opacity: 0.8;
+    }
+
+    .swiper-container--works .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-container--works .swiper-button-next {
+        right: 0;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        opacity: 1;
     }
 
     .Expertise__container {
@@ -1626,7 +1820,6 @@ body.dark-theme .skill__item:hover {
     }
 }
 
-/* For medium devices */
 @media screen and (min-width: 568px) {
     .home__content {
         grid-template-columns: max-content 1fr 1fr;
@@ -1660,6 +1853,12 @@ body.dark-theme .skill__item:hover {
 @media screen and (max-width: 768px) {
     .about__img {
         width: 300px;
+    }
+    .swiper-container--works {
+        width: auto;
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+        padding-bottom: 2.5rem; 
     }
     .Expertise__container {
         grid-template-columns: max-content;
