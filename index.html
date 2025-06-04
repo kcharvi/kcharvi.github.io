@@ -14,7 +14,7 @@
     </script>
     
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="assets/img/Charvi_Kusuma_Logo.png"> <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/Charvi_Kusuma_Logo.png"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Charvi Kusuma - Graduate Student at UB">
     <meta name="keywords" content="ai/ml researcher, data science, software engineer, Charvi Kusuma">
@@ -1693,6 +1693,12 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      const lastModified = new Date(document.lastModified);
+      document.getElementById('last-updated-date').textContent = lastModified.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+      document.getElementById('last-updated-year').textContent = lastModified.getFullYear();
+    </script>
 
 </body>
 
