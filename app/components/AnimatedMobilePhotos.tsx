@@ -61,7 +61,7 @@ export function AnimatedMobilePhotos({ delay }: { delay: number }) {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-20">
+    <div className="relative w-full overflow-hidden py-20 lg:hidden">
       <div className="mx-auto max-w-[800px]">
         {" "}
         {/* Container for large screens */}
