@@ -48,7 +48,7 @@ export default async function LinksPage() {
         <GridWrapper>
           <div className="relative mx-auto grid max-w-2xl grid-cols-3 place-items-center justify-items-center">
             <a
-              href={siteMetadata.twitter}
+              href={siteMetadata.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="group no-underline transition-all duration-500 group-hover:-translate-y-3"
@@ -79,7 +79,7 @@ export default async function LinksPage() {
               </div>
             </a>
             <a
-              href={siteMetadata.linkedin}
+              href={siteMetadata.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="group no-underline transition-all duration-500 group-hover:-translate-y-3"
@@ -138,7 +138,7 @@ export default async function LinksPage() {
               </div>
             </a>
             <a
-              href={siteMetadata.linkedin}
+              href={siteMetadata.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="group no-underline transition-all duration-500 group-hover:-translate-y-3"
@@ -193,6 +193,7 @@ export default async function LinksPage() {
                         // Hide the fourth article on mobile and desktop
                         index === 3 && "hidden md:block lg:hidden",
                       )}
+                      link={`/blog/${post.slug}`}
                     />
                   ))}
                 </>

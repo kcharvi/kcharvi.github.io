@@ -35,7 +35,6 @@ const footerSections: FooterSection[] = [
         label: "Podcasts",
         isExternal: true,
       },
-      { href: "/links", label: "Links" },
     ],
   },
 ];
