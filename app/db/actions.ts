@@ -1,45 +1,7 @@
-// "use server"; // Disabled for static export
-
-import { createSupabaseAdminClient } from "../lib/supabase/server";
-import { revalidatePath } from "next/cache";
-import { cookies } from "next/headers";
-import { v4 as uuidv4 } from "uuid";
-
-type ReactionType = "like" | "heart" | "celebrate" | "insightful";
-const VALID_REACTIONS: ReactionType[] = [
-  "like",
-  "heart",
-  "celebrate",
-  "insightful",
-];
-
 type CreateContactResponse = {
   success: boolean;
   error?: string;
 };
-
-export async function incrementViewCount(slug: string) {
-  // Disabled for static export
-  return 0;
-}
-
-// Get all reaction counts for an article
-export async function getArticleReactions(slug: string) {
-  // Disabled for static export
-  return {};
-}
-
-// Get user's reactions for an article from cookie
-export async function getUserReactions(slug: string) {
-  // Disabled for static export
-  return [];
-}
-
-// Toggle reaction (add or remove)
-export async function toggleReaction(slug: string, reactionType: ReactionType) {
-  // Disabled for static export
-  return;
-}
 
 export async function createContact(
   email: string,

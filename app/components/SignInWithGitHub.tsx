@@ -2,12 +2,9 @@
 
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import useSupabaseClient from "app/lib/supabase/client";
 
 export function SignInWithGitHub() {
   const router = useRouter();
-  const supabase = useSupabaseClient();
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -26,12 +23,7 @@ export function SignInWithGitHub() {
   }, [router]);
 
   const handleLoginWithGitHub = () => {
-    supabase.auth.signInWithOAuth({
-      provider: "github",
-      options: {
-        redirectTo: `${location.origin}/auth/callback`,
-      },
-    });
+    // TODO: Implement GitHub login
   };
 
   return (

@@ -41,7 +41,7 @@ export const Photo = ({
     const randomRotation =
       getRandomNumberInRange(1, 4) * (direction === "left" ? -1 : 1);
     setRotation(randomRotation);
-  }, []);
+  }, [direction]);
 
   function handleMouse(event) {
     const rect = event.currentTarget.getBoundingClientRect();

@@ -10,6 +10,7 @@ import Navbar from "app/components/Navbar";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kcharvi.github.io"),
   title: {
     default: siteMetadata.title,
     template: `%s | ${siteMetadata.title}`,
@@ -60,7 +61,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </main>
-        
+
         {/* Google Analytics (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-585CBPX05B"

@@ -1,6 +1,4 @@
 import clsx from "clsx";
-import { incrementViewCount } from "../db/actions";
-import { createSupabaseAdminClient } from "../lib/supabase/server";
 
 export async function ViewCounter({
   slug,
@@ -11,29 +9,16 @@ export async function ViewCounter({
   increment?: boolean;
   className?: string;
 }) {
-  const viewCount = increment
-    ? await incrementViewCount(slug)
-    : await getViewCount(slug);
+  const viewCount = 0;
 
   return (
     <span className={clsx(className)}>
-      {viewCount} {viewCount === 1 ? "read" : "reads"}
+      View Count: {viewCount}
     </span>
   );
 }
 
 // Helper function to just get the count without incrementing
 async function getViewCount(slug: string) {
-  const supabase = await createSupabaseAdminClient();
-  try {
-    const { data } = await supabase
-      .from("article_views")
-      .select("view_count")
-      .eq("slug", slug)
-      .single();
-
-    return data?.view_count || 0;
-  } catch {
-    return 0;
-  }
+  return 0;
 }
