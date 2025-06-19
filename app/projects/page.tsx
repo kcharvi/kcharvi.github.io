@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { GridWrapper } from "@/app/components/GridWrapper";
 import { ProjectCategorySelect } from "@/app/components/ProjectCategorySelect";
 import Image from "next/image";
@@ -5,12 +7,8 @@ import Link from "next/link";
 import { projects, categories } from "@/app/data/projects";
 import { Photo } from "../components/Photo";
 
-export default async function ProjectPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
-  const category = (await searchParams).category?.toLowerCase() || "";
+export default function ProjectPage() {
+  const [category, setCategory] = useState("");
 
   const displayedProjects = category
     ? projects.filter((project) =>
@@ -23,29 +21,29 @@ export default async function ProjectPage({
       {/* Title */}
       <div className="relative space-y-8 md:space-y-10"></div>
       <GridWrapper className="relative space-y-10 md:space-y-16">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-around lg:px-24">
-            <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">
-              <div className="relative mx-auto w-full max-w-[400px]">
-                <div className="relative grid grid-cols-3">
-                  <div className="relative z-20 -translate-y-2">
-                    <Photo
-                      width={200}
-                      height={160}
-                      src="/projects/me_building.jpg"
-                      alt="Charvi Kusuma"
-                      direction="left"
-                    />
-                  </div>
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-around lg:px-24">
+          <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">
+            <div className="relative mx-auto w-full max-w-[400px]">
+              <div className="relative grid grid-cols-3">
+                <div className="relative z-20 -translate-y-2">
+                  <Photo
+                    width={200}
+                    height={160}
+                    src="/projects/me_building.jpg"
+                    alt="Charvi Kusuma"
+                    direction="left"
+                  />
                 </div>
               </div>
             </div>
-            <div className="order-2 mx-auto max-w-lg lg:order-1 lg:m-0 lg:max-w-3xl lg:pr-12">
-              <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:text-6xl lg:leading-[64px]">
-                Collection of my favorite works.
-              </h1>
-            </div>
           </div>
-        </GridWrapper>
+          <div className="order-2 mx-auto max-w-lg lg:order-1 lg:m-0 lg:max-w-3xl lg:pr-12">
+            <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:leading-[64px]">
+              Collection of my favorite works.
+            </h1>
+          </div>
+        </div>
+      </GridWrapper>
 
       <div className="relative space-y-8 text-center">
         <GridWrapper>
@@ -62,6 +60,7 @@ export default async function ProjectPage({
         <ProjectCategorySelect
           categories={categories}
           currentCategory={category}
+          onCategoryChange={setCategory}
         />
       </div>
 

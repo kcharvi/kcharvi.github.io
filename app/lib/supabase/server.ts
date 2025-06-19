@@ -1,6 +1,10 @@
-"use server";
+// "use server"; // Disabled for static export
 
-import { createServerClient, type CookieOptions, createBrowserClient } from "@supabase/ssr";
+import {
+  createServerClient,
+  type CookieOptions,
+  createBrowserClient,
+} from "@supabase/ssr";
 import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 
@@ -30,6 +34,6 @@ export default async function createSupabaseServerClient() {
 export async function createSupabaseAdminClient() {
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
   );
 }

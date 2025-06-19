@@ -5,7 +5,7 @@ import { CirclePattern } from "./SpeakingBento";
 import { motion } from "framer-motion";
 import { BuildCircle } from "./BuildCircle";
 
-export function CurrentlyPlayingBento({ linkTo }: { linkTo?: string }) {
+export function VisionBoardBento({ linkTo }: { linkTo?: string }) {
   return (
     <BentoCard height="h-[300px]" linkTo={linkTo}>
       <div className="flex flex-col">

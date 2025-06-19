@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import {
   extractUniqueBlogCategories,
   fetchAndSortBlogPosts,
@@ -9,16 +11,12 @@ import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
 import { GridWrapper } from "@/app/components/GridWrapper";
 import clsx from "clsx";
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
+export default function BlogPage() {
   const allPublishedBlogPosts = fetchAndSortBlogPosts();
   const categories = Array.from(
     extractUniqueBlogCategories(allPublishedBlogPosts),
   );
-  const category = (await searchParams).category?.toLowerCase() || "";
+  const [category, setCategory] = useState("");
 
   const displayedPosts = category
     ? allPublishedBlogPosts.filter((post) =>
@@ -88,7 +86,11 @@ export default async function BlogPage({
       </div>
 
       <div>
-        <CategorySelect categories={categories} currentCategory={category} />
+        <CategorySelect
+          categories={categories}
+          currentCategory={category}
+          onCategoryChange={setCategory}
+        />
         <BlogPostList posts={displayedPosts} />
       </div>
 

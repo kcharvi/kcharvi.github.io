@@ -2,7 +2,7 @@ import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 import { HorizontalLine } from "@/app/components/HorizontalLine";
 import { getTimeOfDayGreeting } from "app/lib/utils";
 import React from "react";
-import { CurrentlyPlayingBento } from "@/app/components/CurrentlyPlayingBento";
+import { VisionBoardBento } from "@/app/components/VisionBoardBento";
 import { ConnectionsBento } from "@/app/components/ConnectionsBento";
 import { ScrapbookBento } from "@/app/components/ScrapbookBento";
 import { ShadowBox } from "@/app/components/ShadowBox";
@@ -293,7 +293,11 @@ export default function AboutPage() {
             <Resume />
           </GridWrapper>
           <div className="flex justify-center">
-            <Button variant="secondary" href="/static/charvikusuma_cv.pdf" target="_blank">
+            <Button
+              variant="secondary"
+              href="/static/charvikusuma_cv.pdf"
+              target="_blank"
+            >
               View CV
             </Button>
           </div>
@@ -318,7 +322,7 @@ export default function AboutPage() {
           <GridWrapper>
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
               <div className="lg:col-span-3 lg:row-span-6">
-                <CurrentlyPlayingBento linkTo="/community-wall" />
+                <VisionBoardBento linkTo="/community-wall" />
               </div>
               <div className="hidden lg:col-span-7 lg:row-span-5 lg:block">
                 <ScrapbookBento />

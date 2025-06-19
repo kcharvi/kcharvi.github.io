@@ -1,10 +1,10 @@
 import { Blog, Changelog, changelogItems, posts } from "#site/content";
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 import { notFound } from "next/navigation";
 import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 export const formatDate = (date: string) => {
-  noStore();
+  // noStore();
   let currentDate = new Date();
   if (!date.includes("T")) {
     date = `${date}T00:00:00`;

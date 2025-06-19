@@ -4,7 +4,10 @@ import { ConnectionsBento } from "./ConnectionsBento";
 import { ToolboxBento } from "./ToolboxBento";
 import { CalendarBento } from "./CalendarBento";
 import { BentoCard } from "./BentoCard";
-import { CurrentlyPlayingBento } from "./CurrentlyPlayingBento";
+import { CirclePattern } from "./SpeakingBento";
+import { motion } from "framer-motion";
+import { BuildCircle } from "./BuildCircle";
+import { VisionBoardBento } from "./VisionBoardBento";
 
 export function AboutSection(): React.ReactNode {
   return (

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { MDXContent } from "@/app/components/mdx";
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 import { SectionTitlePill } from "@/app/components/SectionTitlePill";
 import { HorizontalLine } from "@/app/components/HorizontalLine";
 import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
@@ -19,7 +19,7 @@ interface BlogPageProps {
 }
 
 function formatDate(date: string) {
-  noStore();
+  // noStore();
   let currentDate = new Date();
   if (!date.includes("T")) {
     date = `${date}T00:00:00`;

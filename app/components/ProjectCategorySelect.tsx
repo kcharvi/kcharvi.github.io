@@ -1,35 +1,18 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-
 interface ProjectCategorySelectProps {
   categories?: string[];
   currentCategory: string;
+  onCategoryChange: (category: string) => void;
 }
 
 export function ProjectCategorySelect({
   categories = [],
   currentCategory,
+  onCategoryChange,
 }: ProjectCategorySelectProps) {
-  const router = useRouter();
-
-  function routeToCategoryPage(slug: string) {
-    if (slug === "") {
-      router.push("/projects");
-    } else {
-      router.push(
-        `/projects?category=${encodeURIComponent(slug.toLowerCase())}`,
-      );
-    }
-  }
-
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
-  }
-
-  function isActiveTab(tabName, activeCategory) {
-    return tabName === activeCategory;
   }
 
   if (!categories || categories.length === 0) {
@@ -43,7 +26,7 @@ export function ProjectCategorySelect({
         <div className="grid grid-cols-1 lg:hidden">
           <select
             value={currentCategory}
-            onChange={(e) => routeToCategoryPage(e.target.value)}
+            onChange={(e) => onCategoryChange(e.target.value)}
             aria-label="Select a Category"
             className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-2 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-slate-600"
           >
@@ -57,9 +40,9 @@ export function ProjectCategorySelect({
         </div>
         <div className="hidden lg:block">
           <nav className="-mb-px flex space-x-4">
-            <Link
-              href="/projects"
-              aria-current={!currentCategory ? "page" : undefined}
+            <button
+              type="button"
+              onClick={() => onCategoryChange("")}
               className={classNames(
                 !currentCategory
                   ? "border-slate-900 text-slate-900"
@@ -68,24 +51,21 @@ export function ProjectCategorySelect({
               )}
             >
               All
-            </Link>
+            </button>
             {categories.map((cat) => (
-              <Link
+              <button
+                type="button"
                 key={cat}
-                href={`/projects?category=${encodeURIComponent(cat.toLowerCase())}`}
-                aria-current={
-                  cat.toLowerCase() === currentCategory ? "page" : undefined
-                }
+                onClick={() => onCategoryChange(cat.toLowerCase())}
                 className={classNames(
-                  currentCategory &&
-                    isActiveTab(cat.toLowerCase(), currentCategory)
+                  currentCategory === cat.toLowerCase()
                     ? "border-slate-900 text-slate-900"
                     : "border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700",
                   "whitespace-nowrap border-b-2 pb-4 text-sm uppercase",
                 )}
               >
                 {cat}
-              </Link>
+              </button>
             ))}
           </nav>
         </div>

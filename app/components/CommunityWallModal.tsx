@@ -5,33 +5,11 @@ import { SignInWithGitHub } from "./SignInWithGitHub";
 
 // Move the server action outside the component and mark it with 'use server'
 async function handleCreateCommunityNote(formData: FormData) {
-  "use server";
+  // "use server"; // Disabled for static export
 
-  const message = formData.get("message") as string;
-  const patternIndex = parseInt(formData.get("patternIndex") as string);
-  const rotation = parseInt(formData.get("rotation") as string);
-
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) return;
-
-  const newNote = {
-    message,
-    patternindex: patternIndex,
-    rotation: rotation,
-    user_id: user.id,
-    creator_name: user.user_metadata.full_name,
-    creator_avatar_url: user.user_metadata.avatar_url,
-  };
-
-  const { error } = await supabase.from("messages").insert(newNote).select();
-
-  if (!error) {
-    redirect("/community-wall");
-  }
+  // Disabled for static export - no server actions supported
+  console.log("Community note creation disabled for static export");
+  return;
 }
 
 export async function CommunityWallModal() {
