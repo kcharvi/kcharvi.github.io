@@ -125,12 +125,15 @@ export function NewsletterSignUp({
                   onChange={(e) =>
                     setFormState((prev) => ({ ...prev, email: e.target.value }))
                   }
-                  className="w-full rounded-full border border-gray-400 bg-transparent px-5 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-dark-primary md:w-[425px]"
+                  className="w-full rounded-full border border-gray-400 bg-transparent px-5 py-3 pr-[120px] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-dark-primary md:w-[425px]"
+                  style={{
+                    textOverflow: "ellipsis",
+                  }}
                   disabled={formState.isLoading}
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 z-50 inline-flex h-[42px] items-center justify-center rounded-full bg-slate-100 px-4 py-2.5 text-sm font-medium text-slate-900 shadow-lg ring-1 ring-white transition-all duration-300 hover:bg-slate-200 hover:shadow-xl active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="absolute right-1 top-1 z-50 inline-flex h-[42px] min-w-[100px] items-center justify-center rounded-full bg-slate-100 px-4 py-2.5 text-sm font-medium text-slate-900 shadow-lg ring-1 ring-white transition-all duration-300 hover:bg-slate-200 hover:shadow-xl active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
                   disabled={formState.isLoading}
                 >
                   {formState.isLoading ? "Sending..." : buttonText}
