@@ -3,7 +3,11 @@ import { siteMetadata } from "app/data/siteMetadata";
 export function SocialPill() {
   return (
     <div className="z-30 flex place-items-center space-x-1 rounded-full bg-dark-primary px-3 py-1.5">
-      <a href={siteMetadata.social.linkedin}>
+      <a
+        href={siteMetadata.social.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           className="h-5 w-5 text-gray-400 hover:text-gray-300"
           viewBox="0 0 20 20"
@@ -17,7 +21,11 @@ export function SocialPill() {
         </svg>
         <span className="sr-only">LinkedIn</span>
       </a>
-      <a href={siteMetadata.social.github}>
+      <a
+        href={siteMetadata.social.github}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           className="h-5 w-5 text-gray-400 hover:text-gray-300"
           viewBox="-0.5 -0.5 13 13"
@@ -31,7 +39,11 @@ export function SocialPill() {
         </svg>
         <span className="sr-only">GitHub</span>
       </a>
-      <a href={siteMetadata.social.leetcode}>
+      <a
+        href={siteMetadata.social.leetcode}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           className="h-5 w-5 text-gray-400 hover:text-gray-300"
           viewBox="1 1 22 22"
@@ -47,7 +59,11 @@ export function SocialPill() {
         </svg>
         <span className="sr-only">LeetCode</span>
       </a>
-      <a href={siteMetadata.social.google_scholar}>
+      <a
+        href={siteMetadata.social.google_scholar}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           className="h-5 w-5 text-gray-400 hover:text-gray-300"
           viewBox="-32 -32 574 574"
