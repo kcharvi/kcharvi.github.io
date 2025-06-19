@@ -3,7 +3,7 @@ import { NewsletterSignUp } from "./components/NewsletterSignUp";
 import { ChangelogBento } from "./components/ChangelogBento";
 import { fetchAndSortBlogPosts } from "./lib/utils";
 import { SpeakingBento } from "./components/SpeakingBento";
-import { CommunityWallBento } from "./components/CommunityWallBento";
+import { VisionBoardHomeBento } from "./components/VisionBoardHomeBento";
 import { CalendarBento } from "./components/CalendarBento";
 import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
 import { ToolboxBento } from "./components/ToolboxBento";
@@ -201,7 +201,7 @@ export default async function Home() {
                 <ToolboxBento linkTo="/toolbox" />
               </span>
               <SpeakingBento />
-              <CommunityWallBento />
+              <VisionBoardHomeBento />
             </div>
           </GridWrapper>
         </section>

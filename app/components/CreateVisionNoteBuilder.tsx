@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { patterns } from "../lib/communityWall/types";
-import { CommunityWallCard } from "./CommunityWallCard";
+import { patterns } from "../lib/visionBoard/types";
+import { VisionBoardCard } from "./VisionBoardCard";
 
-export function CreateCommunityNoteBuilder({
+export function CreateVisionNoteBuilder({
   onSubmit,
   creator_name,
   creator_avatar_url,
@@ -62,7 +62,7 @@ export function CreateCommunityNoteBuilder({
 
         <div className="relative mb-6">
           <div style={{ transform: `rotate(${rotation}deg)` }}>
-            <CommunityWallCard
+            <VisionBoardCard
               patternIndex={patternIndex}
               author={creator_name}
               profilePicture={creator_avatar_url}
@@ -137,7 +137,7 @@ export function CreateCommunityNoteBuilder({
           ))}
         </div>
         <div className="flex h-9 items-center gap-2 divide-x-2 divide-text-secondary rounded-full bg-dark-primary px-4">
-          <Link className="h-6 w-6" href="/community-wall">
+          <Link className="h-6 w-6" href="/vision-board">
             <button
               type="button"
               className="group bg-dark-primary text-white disabled:cursor-not-allowed disabled:opacity-50"

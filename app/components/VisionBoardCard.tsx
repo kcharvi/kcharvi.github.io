@@ -1,7 +1,7 @@
-import { patterns } from "app/lib/communityWall/types";
+import { patterns } from "@/app/lib/visionBoard/types";
 import Image from "next/image";
 
-type CommunityWallCardProps = {
+type VisionBoardCardProps = {
   patternIndex: number;
   message?: string;
   rotation?: number;
@@ -10,14 +10,14 @@ type CommunityWallCardProps = {
   className?: string;
 };
 
-export function CommunityWallCard({
+export function VisionBoardCard({
   patternIndex,
   message = "",
   rotation = 0,
   author = "",
   profilePicture = "",
   className = "",
-}: CommunityWallCardProps) {
+}: VisionBoardCardProps) {
   const pattern = patterns[patternIndex % patterns.length];
 
   return (

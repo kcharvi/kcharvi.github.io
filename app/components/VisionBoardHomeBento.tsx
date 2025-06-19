@@ -55,10 +55,10 @@ const card2Variants = {
   },
 };
 
-export function CommunityWallBento() {
+export function VisionBoardHomeBento() {
   return (
     <motion.div initial="initial" whileHover="hover">
-      <BentoCard linkTo="/community-wall" height="h-[276px]">
+      <BentoCard linkTo="/vision-board" height="h-[276px]">
         {/* Dots */}
         <div className="absolute top-0 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_2px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
@@ -606,9 +606,7 @@ export function CommunityWallBento() {
         <div className="mb-6 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">
           <div className="col-1 z-10 row-start-2">
             <h2 className="mb-2 font-medium">Vision Board</h2>
-            <p className="text-text-secondary">
-              Coming Soon!
-            </p>
+            <p className="text-text-secondary">Coming Soon!</p>
           </div>
         </div>
       </BentoCard>

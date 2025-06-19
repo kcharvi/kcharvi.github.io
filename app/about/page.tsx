@@ -88,7 +88,7 @@ export default function AboutPage() {
               </h2>
             </GridWrapper>
           </div>
-          <div className="relative h-fit w-full overflow-hidden">
+          <div className="relative h-fit w-full overflow-x-hidden">
             <div className="absolute left-0 top-0 w-full md:left-4 lg:left-[355px] xl:left-[455px]">
               <AboutTrackPattern />
             </div>
@@ -297,6 +297,7 @@ export default function AboutPage() {
               variant="secondary"
               href="/charvikusuma_cv.pdf"
               target="_blank"
+              download="charvikusuma_cv.pdf"
             >
               View CV
             </Button>
@@ -322,7 +323,7 @@ export default function AboutPage() {
           <GridWrapper>
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
               <div className="lg:col-span-3 lg:row-span-6">
-                <VisionBoardBento linkTo="/community-wall" />
+                <VisionBoardBento linkTo="/vision-board" />
               </div>
               <div className="hidden lg:col-span-7 lg:row-span-5 lg:block">
                 <ScrapbookBento />

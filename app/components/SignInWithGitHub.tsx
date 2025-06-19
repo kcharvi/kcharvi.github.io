@@ -10,7 +10,7 @@ export function SignInWithGitHub() {
 
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        router.push("/community-wall");
+        router.push("/vision-board");
       }
     };
 

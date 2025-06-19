@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { BuildCircle } from "./BuildCircle";
 
-export function CommunityWallAnimatedCircle() {
+export function VisionBoardAnimatedCircle() {
   return (
     <div className="user-select-none pointer-events-none absolute -bottom-4 left-1/2 -translate-x-1/2 transition-all duration-300 group-hover:-bottom-1">
       <motion.div
