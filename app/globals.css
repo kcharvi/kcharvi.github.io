@@ -45,7 +45,9 @@ body.modal-open {
   --sh-comment: #64758b;
 }
 
-html {
+html,
+body {
+  overflow-x: hidden;
   min-width: 360px;
 }
 
