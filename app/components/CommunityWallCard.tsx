@@ -1,4 +1,5 @@
 import { patterns } from "app/lib/communityWall/types";
+import Image from "next/image";
 
 type CommunityWallCardProps = {
   patternIndex: number;
@@ -33,10 +34,12 @@ export function CommunityWallCard({
         </p>
       </div>
       <div className="flex w-full items-center space-x-2">
-        <img
+        <Image
           src={profilePicture}
           className="p2 h-8 w-8 flex-shrink-0 rounded-full border-2 border-transparent ring-1 ring-slate-300"
           alt={`${author}'s avatar`}
+          width={32}
+          height={32}
         />
         <p className="truncate text-text-secondary">{author}</p>
       </div>
