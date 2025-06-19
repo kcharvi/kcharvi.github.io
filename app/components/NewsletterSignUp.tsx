@@ -3,7 +3,6 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import { GridWrapper } from "./GridWrapper";
-import { createContact } from "@/app/db/actions";
 
 interface NewsletterSignUpProps {
   title?: string;
@@ -32,14 +31,6 @@ export function NewsletterSignUp({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted with email:", formState.email);
-
-    setFormState((prev) => ({
-      ...prev,
-      message: "",
-      isSuccess: false,
-      isLoading: true,
-    }));
 
     if (!formState.email) {
       setFormState((prev) => ({
@@ -50,30 +41,38 @@ export function NewsletterSignUp({
       return;
     }
 
-    try {
-      console.log("Calling createContact...");
-      const result = await createContact(formState.email);
-      console.log("createContact result:", result);
+    setFormState((prev) => ({
+      ...prev,
+      isLoading: true,
+      message: "",
+    }));
 
-      if (result.success) {
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      const response = await fetch("https://formspree.io/f/xldnjkwg", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
         setFormState((prev) => ({
           ...prev,
-          message: "Perfect! I'll ping you back as soon as I see it!",
           isSuccess: true,
+          message: "Perfect! I'll ping you back as soon as I see it!",
           email: "",
         }));
       } else {
-        setFormState((prev) => ({
-          ...prev,
-          message: result.error || "Something went wrong. :(",
-          isSuccess: false,
-        }));
+        throw new Error("Submission failed");
       }
     } catch (error) {
-      console.error("Error in handleSubmit:", error);
       setFormState((prev) => ({
         ...prev,
-        message: "Something went wrong. :(",
+        message: "Something went wrong. Please try again later.",
         isSuccess: false,
       }));
     } finally {
@@ -112,6 +111,8 @@ export function NewsletterSignUp({
             <div className="z-50 mb-4 space-y-4">
               <form
                 onSubmit={handleSubmit}
+                action="https://formspree.io/f/xldnjkwg"
+                method="POST"
                 className="relative md:inline-block"
               >
                 <label htmlFor="email" className="sr-only">
@@ -119,6 +120,7 @@ export function NewsletterSignUp({
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="your.email@example.com"
                   value={formState.email}

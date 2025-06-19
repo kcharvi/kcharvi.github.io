@@ -295,7 +295,7 @@ export default function AboutPage() {
           <div className="flex justify-center">
             <Button
               variant="secondary"
-              href="/static/charvikusuma_cv.pdf"
+              href="/charvikusuma_cv.pdf"
               target="_blank"
             >
               View CV
