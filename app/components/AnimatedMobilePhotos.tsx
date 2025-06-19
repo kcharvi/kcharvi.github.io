@@ -28,67 +28,76 @@ const images = [
 export function AnimatedMobilePhotos({ delay }: { delay: number }) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Center the first (middle) image on mount
   useEffect(() => {
-    if (scrollContainerRef.current) {
-      // Force a reflow to ensure correct measurements
-      requestAnimationFrame(() => {
-        if (scrollContainerRef.current) {
-          const container = scrollContainerRef.current;
-          const firstItem = container.children[0];
-          const containerWidth = container.clientWidth;
-          const itemWidth = firstItem.clientWidth;
+    const centerMiddleImage = () => {
+      if (scrollContainerRef.current && window.innerWidth < 1024) {
+        // Only center on mobile
+        const container = scrollContainerRef.current;
+        const middleImageIndex = 1;
+        const middleImage = container.children[middleImageIndex];
 
-          // Calculate position to center the first item
-          const scrollPosition = (containerWidth - itemWidth) / 2;
-          container.scrollLeft = 0; // Reset scroll position
+        if (middleImage) {
+          const containerWidth = window.innerWidth;
+          const imageWidth = middleImage.getBoundingClientRect().width;
+
+          // Calculate scroll position to center middle image
+          const scrollPosition = (container.scrollWidth - containerWidth) / 2;
+
+          // Apply scroll position
           container.scrollTo({
             left: scrollPosition,
             behavior: "instant",
           });
         }
-      });
-    }
+      }
+    };
+
+    // Center on mount and after resize
+    centerMiddleImage();
+    window.addEventListener("resize", centerMiddleImage);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", centerMiddleImage);
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden py-20 lg:hidden">
-      <div
-        ref={scrollContainerRef}
-        className="scrollbar-hide flex snap-x snap-mandatory items-center gap-x-8 overflow-x-auto px-[calc(50vw-95px)] pb-8 pt-8"
-        style={{
-          WebkitOverflowScrolling: "touch",
-          scrollSnapType: "x mandatory",
-          scrollPaddingLeft: "calc(50% - 95px)",
-          scrollPaddingRight: "calc(50% - 95px)",
-        }}
-      >
-        {images.map((img, i) => (
-          <div
-            key={i}
-            className="relative w-fit flex-shrink-0 snap-center"
-            style={{ scrollSnapAlign: "center" }}
-          >
-            <ShadowBox width={img.width} height={img.height} />
-            <Image
-              className={`absolute left-0 top-0 rounded-lg object-cover shadow-lg shadow-black/20 ${img.className}`}
-              src={img.src}
-              alt="Photo"
-              width={img.width}
-              height={img.height}
-              priority={i === 0}
-            />
-          </div>
-        ))}
+    <div className="relative w-full overflow-hidden py-20">
+      <div className="mx-auto max-w-[800px]">
+        {" "}
+        {/* Container for large screens */}
+        <div
+          ref={scrollContainerRef}
+          className="no-scrollbar flex items-center justify-start overflow-x-auto scroll-smooth px-[50%] pb-4 pt-4 lg:justify-center lg:overflow-x-hidden lg:px-0"
+          style={{
+            WebkitOverflowScrolling: "touch",
+            scrollSnapType: "x mandatory",
+            gap: "2rem",
+          }}
+        >
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className={`relative w-fit shrink-0 snap-center ${
+                i === 1 ? "z-10" : "z-0"
+              }`}
+              style={{ scrollSnapAlign: "center" }}
+            >
+              <ShadowBox width={img.width} height={img.height} />
+              <Image
+                className={`absolute left-0 top-0 rounded-lg object-cover shadow-lg shadow-black/20 ${img.className}`}
+                src={img.src}
+                alt={`Photo ${i + 1}`}
+                width={img.width}
+                height={img.height}
+                priority={i === 1}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      {/* Optional: Hide scrollbar */}
       <style jsx global>{`
         .overflow-x-auto::-webkit-scrollbar {
           display: none;
-        }
-        .overflow-x-auto {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
         }
       `}</style>
     </div>
