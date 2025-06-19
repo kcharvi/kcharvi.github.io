@@ -2,6 +2,7 @@
 
 import { ShadowBox } from "./ShadowBox";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const images = [
   {
@@ -25,13 +26,41 @@ const images = [
 ];
 
 export function AnimatedMobilePhotos({ delay }: { delay: number }) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Center the first (middle) image on mount
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      // Force a reflow to ensure correct measurements
+      requestAnimationFrame(() => {
+        if (scrollContainerRef.current) {
+          const container = scrollContainerRef.current;
+          const firstItem = container.children[0];
+          const containerWidth = container.clientWidth;
+          const itemWidth = firstItem.clientWidth;
+
+          // Calculate position to center the first item
+          const scrollPosition = (containerWidth - itemWidth) / 2;
+          container.scrollLeft = 0; // Reset scroll position
+          container.scrollTo({
+            left: scrollPosition,
+            behavior: "instant",
+          });
+        }
+      });
+    }
+  }, []);
+
   return (
     <div className="relative w-full overflow-hidden py-20 lg:hidden">
       <div
-        className="scrollbar-hide flex snap-x snap-mandatory items-center gap-x-8 overflow-x-auto px-[calc(50%-150px)] pb-8 pt-8"
+        ref={scrollContainerRef}
+        className="scrollbar-hide flex snap-x snap-mandatory items-center gap-x-8 overflow-x-auto px-[calc(50vw-95px)] pb-8 pt-8"
         style={{
           WebkitOverflowScrolling: "touch",
           scrollSnapType: "x mandatory",
+          scrollPaddingLeft: "calc(50% - 95px)",
+          scrollPaddingRight: "calc(50% - 95px)",
         }}
       >
         {images.map((img, i) => (

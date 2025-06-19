@@ -60,13 +60,14 @@ export default async function ChangelogPage() {
                         {post.title}
                       </h2>
                       {post.imageName ? (
-                        <div className="w-1/2">
+                        <div className="w-full sm:w-3/4 md:w-1/2">
                           <Image
-                            className="drama-shadow mb-12 aspect-[7/5] w-full rounded-xl object-cover"
+                            className="drama-shadow mb-12 aspect-[4/3] w-full rounded-xl object-cover"
                             src={`/${post.imageName}`}
-                            alt=""
+                            alt={post.title}
                             width={1200}
                             height={675}
+                            priority={true}
                           />
                         </div>
                       ) : null}
