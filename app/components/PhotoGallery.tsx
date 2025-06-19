@@ -79,7 +79,7 @@ export const PhotoGallery = ({
       y: "15px",
       zIndex: 50, // Highest z-index (on top)
       direction: "left" as Direction,
-      src: "/charvi_4.jpg",
+      src: "/charvi_4.JPG",
     },
     {
       id: 2,
@@ -151,7 +151,7 @@ export const PhotoGallery = ({
                   width={220}
                   height={220}
                   src={photo.src}
-                  alt="Family photo"
+                  alt="Charvi Kusuma Photo"
                   direction={photo.direction}
                 />
               </motion.div>
