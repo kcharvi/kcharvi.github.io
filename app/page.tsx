@@ -16,6 +16,24 @@ import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
 import { GridWrapper } from "./components/GridWrapper";
 import clsx from "clsx";
 
+export const metadata = {
+  title: "Charvi Kusuma | AI Engineer & Researcher",
+  description: "Portfolio, blog, and projects of Charvi Kusuma.",
+  openGraph: {
+    title: "Charvi Kusuma | AI Engineer & Researcher",
+    description: "Portfolio, blog, and projects of Charvi Kusuma.",
+    url: "https://kcharvi.github.io/",
+    images: [
+      {
+        url: "/charvi_headshot.png",
+        width: 800,
+        height: 800,
+        alt: "Charvi Kusuma",
+      },
+    ],
+  },
+};
+
 export default async function Home() {
   const allPublishedBlogPosts = await fetchAndSortBlogPosts();
   const featuredArticles = allPublishedBlogPosts.slice(0, 4);

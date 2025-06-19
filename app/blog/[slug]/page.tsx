@@ -290,3 +290,7 @@ export async function generateMetadata(
     },
   };
 }
+
+export function generateStaticParams() {
+  return posts.map((post) => ({ slug: post.slug }));
+}

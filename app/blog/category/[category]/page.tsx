@@ -5,6 +5,7 @@ import {
 import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 import { BlogPostList } from "@/app/components/BlogPostList";
 import { CategorySelect } from "@/app/components/CategorySelect";
+import { posts } from "#site/content";
 
 export default async function CategoryPage({
   params,
@@ -46,4 +47,10 @@ export default async function CategoryPage({
       />
     </div>
   );
+}
+export function generateStaticParams() {
+  const categories = Array.from(
+    new Set(posts.flatMap((post) => post.categories.map((cat) => cat.toLowerCase())))
+  );
+  return categories.map((category) => ({ category }));
 }
