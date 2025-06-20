@@ -7,7 +7,7 @@ import { VisionBoardHomeBento } from "./components/VisionBoardHomeBento";
 import { CalendarBento } from "./components/CalendarBento";
 import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
 import { ToolboxBento } from "./components/ToolboxBento";
-import { ConnectionsBento } from "./components/ConnectionsBento";
+import { ProjectsBento } from "./components/ProjectsBento";
 import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
 import { AnimatedText } from "./components/AnimatedText";
 import { PhotoGallery } from "./components/PhotoGallery";
@@ -119,7 +119,7 @@ export default async function Home() {
               </div>
 
               <div className="md:col-span-12 lg:col-span-7 lg:row-span-8">
-                <ConnectionsBento linkTo="/projects" />
+                <ProjectsBento linkTo="/projects" />
               </div>
 
               <div className="md:col-span-7 md:row-start-1 lg:col-span-5 lg:row-span-7">

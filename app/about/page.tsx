@@ -6,7 +6,7 @@ import Image from "next/image";
 import { AboutTrackPattern } from "@/app/components/AboutTrackPattern";
 import { AnimatedImage } from "@/app/components/AnimatedImage";
 import { Button } from "@/app/components/Button";
-import { ConnectionsBento } from "@/app/components/ConnectionsBento";
+import { ProjectsBento } from "@/app/components/ProjectsBento";
 import { CurrentlyReadingBento } from "@/app/components/CurrentlyReadingBento";
 import { getTimeOfDayGreeting } from "app/lib/utils";
 import { GridWrapper } from "@/app/components/GridWrapper";
@@ -26,7 +26,6 @@ export default function AboutPage() {
     <div className="relative mt-14">
       <title>About | Charvi Kusuma</title>
       <div className="relative space-y-10 md:space-y-16">
-        
         {/* Title */}
         <GridWrapper className="space-y-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-around lg:px-24">
@@ -337,7 +336,7 @@ export default function AboutPage() {
                 <CurrentlyReadingBento />
               </div>
               <div className="lg:col-span-7 lg:row-span-8">
-                <ConnectionsBento linkTo="/projects" />
+                <ProjectsBento linkTo="/projects" />
               </div>
               <div className="lg:col-span-3 lg:row-span-4">
                 <StatsBento />

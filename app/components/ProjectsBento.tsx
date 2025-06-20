@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import clsx from "clsx";
 import Image from "next/image";
 
-export function ConnectionsBento({
+export function ProjectsBento({
   linkTo,
 }: {
   linkTo?: string;
@@ -207,7 +207,8 @@ export function ConnectionsBento({
         <div className="z-20 mt-auto w-full text-balance text-center">
           <h2 className="text-base font-medium">Projects</h2>
           <p className="mt-1 text-text-secondary">
-            An evolving list of projects I&apos;ve built and those I wish to start.
+            An evolving list of projects I&apos;ve built and those I wish to
+            start.
           </p>
         </div>
       </div>
@@ -351,7 +352,13 @@ function AnimatedConnectionCircle({
       className={`absolute ${sizeClass} ${paddingClass} z-10`}
     >
       <ConnectionCircle sizeClass={sizeClass} paddingClass={paddingClass}>
-        <Image className="rounded-full" src={src} alt="Connection" width={100} height={100}/>
+        <Image
+          className="rounded-full"
+          src={src}
+          alt="Connection"
+          width={100}
+          height={100}
+        />
       </ConnectionCircle>
     </motion.div>
   );
