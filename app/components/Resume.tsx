@@ -2,7 +2,6 @@ import { ResumeData } from "../lib/resume/types";
 import { Timeline } from "./Timeline";
 import { FiExternalLink } from "react-icons/fi";
 import { ExperienceImage } from "./ExperienceImage";
-import { Photo } from "./Photo";
 
 const resumeData: ResumeData = {
   experiences: [

@@ -1,20 +1,23 @@
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
-import { HorizontalLine } from "@/app/components/HorizontalLine";
-import { getTimeOfDayGreeting } from "app/lib/utils";
+// app/about/page.tsx
+
 import React from "react";
-import { VisionBoardBento } from "@/app/components/VisionBoardBento";
+import Image from "next/image";
+
+import { AboutTrackPattern } from "@/app/components/AboutTrackPattern";
+import { AnimatedImage } from "@/app/components/AnimatedImage";
+import { Button } from "@/app/components/Button";
 import { ConnectionsBento } from "@/app/components/ConnectionsBento";
+import { CurrentlyReadingBento } from "@/app/components/CurrentlyReadingBento";
+import { getTimeOfDayGreeting } from "app/lib/utils";
+import { GridWrapper } from "@/app/components/GridWrapper";
+import { HorizontalLine } from "@/app/components/HorizontalLine";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+import { Photo } from "@/app/components/Photo";
+import { Resume } from "app/components/Resume";
 import { ScrapbookBento } from "@/app/components/ScrapbookBento";
 import { ShadowBox } from "@/app/components/ShadowBox";
-import { Resume } from "app/components/Resume";
 import { StatsBento } from "@/app/components/StatsBento";
-import { CurrentlyReadingBento } from "@/app/components/CurrentlyReadingBento";
-import { GridWrapper } from "@/app/components/GridWrapper";
-import { AboutTrackPattern } from "@/app/components/AboutTrackPattern";
-import { Photo } from "@/app/components/Photo";
-import { Button } from "@/app/components/Button";
-import { AnimatedImage } from "@/app/components/AnimatedImage";
-import Image from "next/image";
+import { VisionBoardBento } from "@/app/components/VisionBoardBento";
 
 export default function AboutPage() {
   const timeOfDayGreeting = getTimeOfDayGreeting();
@@ -23,6 +26,7 @@ export default function AboutPage() {
     <div className="relative mt-14">
       <title>About | Charvi Kusuma</title>
       <div className="relative space-y-10 md:space-y-16">
+        
         {/* Title */}
         <GridWrapper className="space-y-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-around lg:px-24">
@@ -273,7 +277,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* About */}
+        {/* Experience - Resume */}
         <div className="relative space-y-8 text-center">
           <div className="space-y-4">
             <GridWrapper>
@@ -304,6 +308,7 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* More */}
         <section className="relative space-y-16">
           <div className="space-y-4">
             <GridWrapper>
@@ -334,7 +339,6 @@ export default function AboutPage() {
               <div className="lg:col-span-7 lg:row-span-8">
                 <ConnectionsBento linkTo="/projects" />
               </div>
-
               <div className="lg:col-span-3 lg:row-span-4">
                 <StatsBento />
               </div>

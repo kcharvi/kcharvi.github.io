@@ -15,16 +15,16 @@ export function Timeline({ avatarUrl }: TimelineProps) {
     offset: ["end 50%", "start 50%"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["calc(100% - 36px)", "0%"]);
 
   return (
-    <div ref={containerRef} className="relative h-full w-full">
+    <div ref={containerRef} className="relative h-full w-full overflow-hidden">
       <motion.div
         className="absolute -left-0.5 z-10 flex"
         style={{
           top: 0,
           height: "100%",
-          y: useTransform(scrollYProgress, [0, 1], ["100%", "0%"]),
+          y,
         }}
       >
         <div className="relative h-9 w-9 overflow-hidden rounded-full border-2 border-bg-primary bg-bg-primary shadow-md">
