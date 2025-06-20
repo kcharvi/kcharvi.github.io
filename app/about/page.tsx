@@ -300,7 +300,6 @@ export default function AboutPage() {
               variant="secondary"
               href="/charvikusuma_cv.pdf"
               target="_blank"
-              download="charvikusuma_cv.pdf"
             >
               View CV
             </Button>
