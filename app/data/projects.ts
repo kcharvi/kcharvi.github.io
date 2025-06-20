@@ -1,3 +1,5 @@
+// app/data/projects.ts
+
 export const categories = [
   "Recent",
   "Highlights",

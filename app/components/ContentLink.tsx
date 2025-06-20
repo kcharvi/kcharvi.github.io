@@ -1,3 +1,5 @@
+// app/components/ContentLink.tsx
+
 import clsx from "clsx";
 
 function ContentWrapper({

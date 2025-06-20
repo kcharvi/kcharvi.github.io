@@ -1,7 +1,10 @@
-import Link from "next/link";
-import { SocialPill } from "./SocialPill";
-import { GridWrapper } from "./GridWrapper";
+// app/components/Footer.tsx
+
 import Image from "next/image";
+import Link from "next/link";
+
+import { GridWrapper } from "./GridWrapper";
+import { SocialPill } from "./SocialPill";
 import { siteMetadata } from "@/app/data/siteMetadata";
 
 interface FooterLink {
@@ -35,6 +38,7 @@ const footerSections: FooterSection[] = [
         label: "Podcasts",
         isExternal: true,
       },
+      { href: "/links", label: "Links" },
     ],
   },
 ];
@@ -56,6 +60,7 @@ export function Footer(): JSX.Element {
       <div className="relative max-w-7xl border-border-primary/50">
         <GridWrapper>
           <div className="max-w-6xl divide-y px-4 lg:mx-auto lg:flex lg:divide-x lg:px-4 xl:px-0">
+            
             {/* Left Section - Description */}
             <div className="flex w-full flex-col py-6 text-sm lg:w-1/3">
               <div className="flex-grow space-y-6">

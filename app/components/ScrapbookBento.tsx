@@ -1,14 +1,16 @@
+// app/components/ScrapbookBento.tsx
+
 "use client";
 
+import Image from "next/image";
+
+import { cn } from "../lib/utils";
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useClickAnyWhere, useMediaQuery } from "usehooks-ts";
-
-import { cn } from "../lib/utils";
 import { useRotationVelocity } from "../lib/useRotationVelocity";
 import { useElementBoundingRect } from "../lib/useelementBoundingRect";
 import { BentoCard } from "./BentoCard";
-import Image from "next/image";
 
 function Sticker({
   children,
@@ -23,22 +25,18 @@ function Sticker({
   className?: string;
   preventYOffsetOnMobile?: boolean;
 }) {
-  // Create refs for the sticker and caption, and set up measurement of elements
   const itemRef = useRef<HTMLDivElement | null>(null);
   const boundingRect = useElementBoundingRect(itemRef);
 
-  // Manage state of stickers
   const [isDragging, setIsDragging] = useState<Boolean>(false);
   const [isCaptionVisible, setIsCaptionVisible] = useState<Boolean>(false);
   const [isModal, setIsModal] = useState<Boolean>(false);
 
-  // Set up initial values persisted in state even while dragging
-  const [initialRotation] = useState<number>(-12 + index * 8); // Deterministic rotation based on index
+  const [initialRotation] = useState<number>(-12 + index * 8); 
   const [initialY] = useState<number>(
     15 * (index === 0 ? 1 : index % 2 === 0 ? -0.5 : 0.5),
   );
 
-  // Handle smaller devices with different behavior
   const matches = useMediaQuery("(max-width: 768px)");
 
   function onOpen() {
@@ -50,7 +48,6 @@ function Sticker({
 
   function onStart() {
     if (!matches) {
-      // setDirty && setDirty(true)
       setIsCaptionVisible(true);
       setIsDragging(true);
     }
@@ -75,7 +72,6 @@ function Sticker({
     }
   });
 
-  // Setup rotation based on speed of drag
   const { rotate, x } = useRotationVelocity(initialRotation);
 
   const stickerVariants = {
@@ -257,19 +253,6 @@ export function ScrapbookBento({ className }: { className?: string }) {
               className="xs:max-w-none"
             />
           </Sticker>          
-          {/* <Sticker
-            caption="I love Harry Potter and have read the books and watched the movies countless times. It ALWAYS has a special place in my heart."
-            index={4}
-          >
-            <Image
-              width="200"
-              height="200"
-              src="/about/harry_potter.png"
-              alt="Potterhead"
-              className="xs:max-w-none max-w-[100px]"
-              draggable={false}
-            />
-          </Sticker> */}
         </motion.div>
       </div>
     </BentoCard>

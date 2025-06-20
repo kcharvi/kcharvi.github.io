@@ -1,12 +1,14 @@
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+// app/links/page.tsx
 
-import { GridWrapper } from "@/app/components/GridWrapper";
-import { ProfilePicture } from "@/app/components/ProfilePicture";
+import clsx from "clsx";
+
 import { Button } from "@/app/components/Button";
-import { siteMetadata } from "@/app/data/siteMetadata";
 import { fetchAndSortBlogPosts } from "@/app/lib/utils";
 import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
-import clsx from "clsx";
+import { GridWrapper } from "@/app/components/GridWrapper";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+import { ProfilePicture } from "@/app/components/ProfilePicture";
+import { siteMetadata } from "@/app/data/siteMetadata";
 
 export default async function LinksPage() {
   const allPublishedBlogPosts = await fetchAndSortBlogPosts();
@@ -25,8 +27,13 @@ export default async function LinksPage() {
         <GridWrapper>
           <div className="mx-auto max-w-xl text-center md:mt-8">
             <p className="leading-8 text-text-secondary">
-              I&apos;m a front-end developer, team lead, blogger and
-              international public speaker.
+              I&apos;m an AI engineer & researcher always curious, and strategic
+              to bring ideas to life and explore what&apos;s next in AI. I am
+              adept at both software development and research aspects of AI,
+              ensuring AI models are accurate, scalable, and integrated into
+              real-world applications. This site is my little exhibit where
+              I&apos;ve curated the projects, ideas, and effort that reflect my
+              journey, interests, and learnings.
             </p>
           </div>
         </GridWrapper>
@@ -34,9 +41,6 @@ export default async function LinksPage() {
           <div className="flex justify-center space-x-4 py-4">
             <Button href="/" variant="primary">
               View my full website
-            </Button>
-            <Button href="mailto:charvi@kusuma.net" variant="secondary">
-              Email me
             </Button>
           </div>
         </GridWrapper>
@@ -48,7 +52,7 @@ export default async function LinksPage() {
         <GridWrapper>
           <div className="relative mx-auto grid max-w-2xl grid-cols-3 place-items-center justify-items-center">
             <a
-              href={siteMetadata.social.linkedin}
+              href={`mailto:${siteMetadata.email}`}
               target="_blank"
               rel="noopener noreferrer"
               className="group no-underline transition-all duration-500 group-hover:-translate-y-3"
@@ -66,15 +70,16 @@ export default async function LinksPage() {
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M9.31 18.25C14.7819 18.25 17.7744 13.4403 17.7744 9.26994C17.7744 9.03682 17.9396 8.83015 18.152 8.73398C18.8803 8.40413 19.8249 7.49943 18.8494 5.97828C18.2031 6.32576 17.6719 6.51562 16.9603 6.74448C15.834 5.47393 13.9495 5.41269 12.7514 6.60761C11.9785 7.37819 11.651 8.52686 11.8907 9.62304C9.49851 9.49618 6.69788 7.73566 5.1875 5.76391C4.39814 7.20632 4.80107 9.05121 6.10822 9.97802C5.63461 9.96302 5.1716 9.82741 4.75807 9.58305V9.62304C4.75807 11.1255 5.75654 12.4191 7.1444 12.7166C6.70672 12.8435 6.24724 12.8622 5.80131 12.771C6.19128 14.0565 7.87974 15.4989 9.15272 15.5245C8.09887 16.4026 6.79761 16.8795 5.45806 16.8782C5.22126 16.8776 4.98504 16.8626 4.75 16.8326C6.11076 17.7588 7.69359 18.25 9.31 18.2475V18.25Z"
+                        d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                      ></path>
+                      />
+                      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                   </div>
-                  <p className="mt-3 text-sm text-gray-500">Twitter</p>
+                  <p className="mt-3 text-sm text-gray-500">Email Me</p>
                 </div>
               </div>
             </a>

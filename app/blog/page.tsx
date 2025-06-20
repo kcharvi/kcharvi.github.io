@@ -1,15 +1,18 @@
+// app/blog/page.tsx
+
 "use client";
+import clsx from "clsx";
 import { useState } from "react";
 import {
   extractUniqueBlogCategories,
   fetchAndSortBlogPosts,
 } from "app/lib/utils";
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+
 import { BlogPostList } from "@/app/components/BlogPostList";
 import { CategorySelect } from "@/app/components/CategorySelect";
 import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
 import { GridWrapper } from "@/app/components/GridWrapper";
-import clsx from "clsx";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 
 export default function BlogPage() {
   const allPublishedBlogPosts = fetchAndSortBlogPosts();
@@ -38,7 +41,6 @@ export default function BlogPage() {
                 summary={post.summary}
                 link={post.link || `/blog/${post.slug}`}
                 className={clsx(
-                  // Hide the fourth article on mobile and desktop
                   index === 3 && "hidden md:block lg:hidden",
                 )}
               />
@@ -85,6 +87,7 @@ export default function BlogPage() {
         </div>
       </div>
 
+      {/* Category Select */}
       <div>
         <CategorySelect
           categories={categories}

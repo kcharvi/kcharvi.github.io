@@ -1,3 +1,5 @@
+// app/components/PageTitle.tsx
+
 import { cx } from "../lib/utils";
 
 type PageTitleProps = {

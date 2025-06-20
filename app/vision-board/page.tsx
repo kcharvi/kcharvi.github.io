@@ -1,3 +1,5 @@
+// app/vision-board/page.tsx
+
 import { VisionBoardAnimatedCircle } from "@/app/components/VisionBoardAnimatedCircle";
 
 export default function Page() {

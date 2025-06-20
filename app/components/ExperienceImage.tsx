@@ -1,9 +1,12 @@
+// app/components/ExperienceImage.tsx
+
 "use client";
 
-import { Ref, forwardRef } from "react";
 import Image, { ImageProps } from "next/image";
-import { motion } from "framer-motion";
+
 import { cn } from "../lib/utils";
+import { motion } from "framer-motion";
+import { Ref, forwardRef } from "react";
 
 const MotionImage = motion(
   forwardRef(function MotionImage(

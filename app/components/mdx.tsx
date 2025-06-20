@@ -1,10 +1,13 @@
+// app/components/mdx.tsx
+
 "use client";
-import React, { useState } from "react";
-import * as runtime from "react/jsx-runtime";
-import { highlight } from "sugar-high";
+
 import Link from "next/link";
 import Image from "next/image";
+import React, { useState } from "react";
+import * as runtime from "react/jsx-runtime";
 import { BgGradient } from "./BgGradient";
+import { highlight } from "sugar-high";
 
 interface MDXProps {
   code: string;
@@ -258,11 +261,11 @@ function slugify(str) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, "-") // Replace spaces with -
-    .replace(/&/g, "-and-") // Replace & with 'and'
-    .replace(/[^\w\-]+/g, "") // Remove all non-word characters except for -
-    .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+    .trim() 
+    .replace(/\s+/g, "-") 
+    .replace(/&/g, "-and-") 
+    .replace(/[^\w\-]+/g, "") 
+    .replace(/\-\-+/g, "-"); 
 }
 
 function createHeading(level) {
@@ -292,7 +295,6 @@ function createHeading(level) {
 }
 
 function paragraph({ children }) {
-  // Check if children contains any block-level elements
   const hasBlockElements = React.Children.toArray(children).some(
     (child) =>
       React.isValidElement(child) &&
@@ -300,12 +302,10 @@ function paragraph({ children }) {
       /^(div|p|ul|ol|h[1-6])$/i.test(child.type),
   );
 
-  // If there are block-level elements, render without wrapping p tag
   if (hasBlockElements) {
     return <>{children}</>;
   }
 
-  // Otherwise, wrap in a p tag as before
   return (
     <p className="mb-6 text-base leading-8 text-text-secondary">{children}</p>
   );

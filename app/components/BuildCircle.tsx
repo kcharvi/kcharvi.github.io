@@ -1,3 +1,5 @@
+// app/components/BuildCircle.tsx
+
 import React from "react";
 
 export function BuildCircle({ ImageUrl }: { ImageUrl: string }) {

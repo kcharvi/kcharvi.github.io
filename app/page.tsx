@@ -1,20 +1,24 @@
-import { BgGradient } from "./components/BgGradient";
-import { NewsletterSignUp } from "./components/NewsletterSignUp";
-import { ChangelogBento } from "./components/ChangelogBento";
-import { fetchAndSortBlogPosts } from "./lib/utils";
-import { SpeakingBento } from "./components/SpeakingBento";
-import { VisionBoardHomeBento } from "./components/VisionBoardHomeBento";
-import { CalendarBento } from "./components/CalendarBento";
-import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
-import { ToolboxBento } from "./components/ToolboxBento";
-import { ProjectsBento } from "./components/ProjectsBento";
-import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
-import { AnimatedText } from "./components/AnimatedText";
-import { PhotoGallery } from "./components/PhotoGallery";
+// app/page.tsx
+
+import clsx from "clsx";
+
 import { AboutMeBento } from "./components/AboutMeBento";
 import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
+import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
+import { AnimatedText } from "./components/AnimatedText";
+import { BgGradient } from "./components/BgGradient";
+import { CalendarBento } from "./components/CalendarBento";
+import { ChangelogBento } from "./components/ChangelogBento";
+import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
+import { fetchAndSortBlogPosts } from "./lib/utils";
 import { GridWrapper } from "./components/GridWrapper";
-import clsx from "clsx";
+import { NewsletterSignUp } from "./components/NewsletterSignUp";
+import { PhotoGallery } from "./components/PhotoGallery";
+import { ProjectsBento } from "./components/ProjectsBento";
+import { SpeakingBento } from "./components/SpeakingBento";
+import { ToolboxBento } from "./components/ToolboxBento";
+import { VisionBoardHomeBento } from "./components/VisionBoardHomeBento";
+
 
 export const metadata = {
   title: "Charvi Kusuma | AI Engineer & Researcher",

@@ -1,6 +1,8 @@
+// app/components/ChangelogBento.tsx
+
+import { BentoCard } from "./BentoCard";
 import { Changelog } from "@/.velite";
 import { fetchAndSortChangelogEntrees } from "app/lib/utils";
-import { BentoCard } from "./BentoCard";
 
 export function ChangelogBento({ linkTo }: { linkTo?: string }) {
   const changelogItems = fetchAndSortChangelogEntrees().slice(0, 4);
@@ -14,6 +16,7 @@ export function ChangelogBento({ linkTo }: { linkTo?: string }) {
   return (
     <BentoCard height="md:h-[304px] lg:h-[300px]" linkTo={linkTo} className="group">
       <div className="border-px absolute left-1/2 top-0 h-full w-2 -translate-x-1/2 transform border-x border-[#A5AEB8]/10 bg-[#D6DADE]/35"></div>
+      
       {/* Timeline */}
       <div className="relative">
         <div className="absolute left-0 right-0 top-0 transition-transform duration-500 ease-in-out group-hover:-translate-y-6">
@@ -33,6 +36,7 @@ export function ChangelogBento({ linkTo }: { linkTo?: string }) {
           ))}
         </div>
       </div>
+      
       {/* Gradient overlay */}
       <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white to-transparent"></div>
       <div className="z-10 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">

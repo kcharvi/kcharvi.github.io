@@ -1,3 +1,5 @@
+// app/components/VideoCard.tsx
+
 "use client";
 
 import Image from "next/image";

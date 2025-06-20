@@ -1,7 +1,6 @@
-import { Changelog } from "@/.velite";
-import { fetchAndSortChangelogEntrees } from "app/lib/utils";
+// app/components/CurrentlyReadingBento.tsx
+
 import { BentoCard } from "./BentoCard";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function CurrentlyReadingBento() {
@@ -13,6 +12,7 @@ export function CurrentlyReadingBento() {
           <BookCover />
         </div>
       </div>
+      
       {/* Gradient overlay */}
       <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white via-transparent to-transparent"></div>
     </BentoCard>

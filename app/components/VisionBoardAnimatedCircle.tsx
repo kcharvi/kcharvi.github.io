@@ -1,3 +1,5 @@
+// app/components/VisionBoardAnimatedCircle.tsx
+
 "use client";
 import { motion } from "framer-motion";
 import { BuildCircle } from "./BuildCircle";

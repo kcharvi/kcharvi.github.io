@@ -1,10 +1,11 @@
+// app/components/StatsBento.tsx
+
 "use client";
+
 import { BentoCard } from "./BentoCard";
 import { useEffect, useState, useCallback } from "react";
 import { siteMetadata } from "../data/siteMetadata";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import Link from "next/link";
-import { motion } from "framer-motion";
 
 interface LeetCodeStats {
   totalSolved: number;

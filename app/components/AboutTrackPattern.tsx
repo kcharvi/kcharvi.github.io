@@ -1,7 +1,9 @@
+// app/components/AboutTrackPattern.tsx
+
 "use client";
 
-import { useScroll, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { useScroll, motion } from "framer-motion";
 
 export function AboutTrackPattern() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +33,6 @@ export function AboutTrackPattern() {
     return scrollYProgress.on("change", (latest) => {
       const clampedProgress = Math.max(0, Math.min(latest, 1));
       if (latest > 0) {
-        // Get the active path based on screen size
         const activePath =
           window.innerWidth >= 1024 ? pathRef.current : verticalPathRef.current;
         if (!activePath) return;

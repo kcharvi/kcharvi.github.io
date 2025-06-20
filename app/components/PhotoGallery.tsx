@@ -1,3 +1,5 @@
+// app/components/PhotoGallery.tsx
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -15,18 +17,16 @@ export const PhotoGallery = ({
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // First make the container visible with a fade-in
     const visibilityTimer = setTimeout(() => {
       setIsVisible(true);
     }, animationDelay * 1000);
 
-    // Then start the photo animations after a short delay
     const animationTimer = setTimeout(
       () => {
         setIsLoaded(true);
       },
       (animationDelay + 0.4) * 1000,
-    ); // Add 0.4s for the opacity transition
+    ); 
 
     return () => {
       clearTimeout(visibilityTimer);
@@ -34,50 +34,46 @@ export const PhotoGallery = ({
     };
   }, [animationDelay]);
 
-  // Animation variants for the container
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.1, // Reduced from 0.3 to 0.1 since we already have the fade-in delay
+        delayChildren: 0.1, 
       },
     },
   };
 
-  // Animation variants for each photo
   const photoVariants = {
     hidden: (custom) => ({
       x: 0,
       y: 0,
       rotate: 0,
       scale: 1,
-      // Keep the same z-index throughout animation
     }),
     visible: (custom) => ({
       x: custom.x,
       y: custom.y,
-      rotate: 0, // No rotation
+      rotate: 0, 
       scale: 1,
       transition: {
         type: "spring",
         stiffness: 70,
         damping: 12,
         mass: 1,
-        delay: custom.order * 0.15, // Explicit delay based on order
+        delay: custom.order * 0.15, 
       },
     }),
   };
 
-  // Photo positions - horizontal layout with random y offsets
   const photos = [
     {
       id: 1,
       order: 0,
       x: "-320px",
       y: "15px",
-      zIndex: 50, // Highest z-index (on top)
+      zIndex: 50, 
       direction: "left" as Direction,
       src: "/charvi_4.JPG",
     },
@@ -113,7 +109,7 @@ export const PhotoGallery = ({
       order: 4,
       x: "320px",
       y: "44px",
-      zIndex: 10, // Lowest z-index (at bottom)
+      zIndex: 10, 
       direction: "left" as Direction,
       src: "/charvi_5.jpg",
     },
@@ -134,12 +130,11 @@ export const PhotoGallery = ({
           animate={isLoaded ? "visible" : "hidden"}
         >
           <div className="relative h-[220px] w-[220px]">
-            {/* Render photos in reverse order so that higher z-index photos are rendered later in the DOM */}
             {[...photos].reverse().map((photo) => (
               <motion.div
                 key={photo.id}
                 className="absolute left-0 top-0"
-                style={{ zIndex: photo.zIndex }} // Apply z-index directly in style
+                style={{ zIndex: photo.zIndex }} 
                 variants={photoVariants}
                 custom={{
                   x: photo.x,

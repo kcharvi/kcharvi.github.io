@@ -1,3 +1,5 @@
+// app/components/CategorySelect.tsx
+
 "use client";
 
 interface CategorySelectProps {

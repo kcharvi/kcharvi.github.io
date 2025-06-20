@@ -1,6 +1,9 @@
+// app/components/ToolboxBento.tsx
+
+import Image from "next/image";
+
 import { softwareData } from "../data/toolbox";
 import { BentoCard } from "./BentoCard";
-import Image from "next/image";
 
 const items = softwareData
   .map((item, index) => (
@@ -32,7 +35,6 @@ const items = softwareData
 export function ToolboxBento({ linkTo }: { linkTo?: string }) {
   return (
     <BentoCard linkTo={linkTo} height="h-[276px]">
-      {/* <div className="group-hover:from-bg-white absolute inset-y-0 left-0 z-20 w-1/5 bg-gradient-to-r from-bg-primary to-transparent"></div> */}
       <div className="group-hover:from-bg-white absolute inset-y-0 right-0 z-20 w-1/5 bg-gradient-to-l from-bg-primary to-transparent"></div>
       <div className="mt-4 flex items-center justify-center gap-3 transition-all duration-500 ease-in-out md:mt-6">
         {items}

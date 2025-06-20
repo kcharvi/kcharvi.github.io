@@ -1,6 +1,9 @@
+// app/components/AboutMeBento.tsx
+
+import Image from "next/image";
+
 import { getTimeOfDayGreeting } from "../lib/utils";
 import { BentoCard } from "./BentoCard";
-import Image from "next/image";
 
 export function AboutMeBento({ linkTo }: { linkTo?: string }) {
   const timeOfDayGreeting = getTimeOfDayGreeting();

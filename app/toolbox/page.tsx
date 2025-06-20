@@ -1,9 +1,12 @@
+// app/toolbox/page.tsx
+
+import Image from "next/image";
+
 import { BorderCard } from "@/app/components/BorderCard";
 import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 import { skillsData, softwareData } from "app/data/toolbox";
 import { HorizontalLine } from "@/app/components/HorizontalLine";
 import { GridWrapper } from "@/app/components/GridWrapper";
-import Image from "next/image";
 import { ToolboxPhotoGallery } from "@/app/components/ToolboxPhotoGallery";
 import { ToolboxMobilePhotos } from "@/app/components/ToolboxMobilePhotos";
 

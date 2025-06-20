@@ -1,3 +1,5 @@
+// app/components/ToolboxPhotoGallery.tsx
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -9,12 +11,10 @@ export const ToolboxPhotoGallery = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // First make the container visible with a fade-in
     const visibilityTimer = setTimeout(() => {
       setIsVisible(true);
     }, 0.5 * 1000);
 
-    // Then start the photo animations after a short delay
     const animationTimer = setTimeout(
       () => {
         setIsLoaded(true);
@@ -28,7 +28,6 @@ export const ToolboxPhotoGallery = () => {
     };
   }, []);
 
-  // Animation variants for the container
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -40,7 +39,6 @@ export const ToolboxPhotoGallery = () => {
     },
   };
 
-  // Animation variants for each photo
   const photoVariants = {
     hidden: (custom) => ({
       x: 0,
@@ -63,7 +61,6 @@ export const ToolboxPhotoGallery = () => {
     }),
   };
 
-  // Photo positions - horizontal layout with random y offsets
   const photos = [
     {
       id: 1,

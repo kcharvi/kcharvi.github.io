@@ -1,3 +1,5 @@
+// app/components/ShadowBox.tsx
+
 type ShadowBoxProps = {
   children?: React.ReactNode;
   label?: string;

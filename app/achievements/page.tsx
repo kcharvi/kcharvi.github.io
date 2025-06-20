@@ -1,15 +1,19 @@
-import { MDXContent } from "@/app/components/mdx";
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+// app/achievements/page.tsx
+
+import React from "react";
+import Image from "next/image";
+
 import { fetchAndSortChangelogPosts } from "@/app/lib/utils";
 import { GridWrapper } from "@/app/components/GridWrapper";
-import Image from "next/image";
+import { MDXContent } from "@/app/components/mdx";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 
 export default async function ChangelogPage() {
   const allChangelogItems = await fetchAndSortChangelogPosts();
 
   return (
     <div className="w-full space-y-16">
-      <title>Changelog | Charvi Kusuma</title>
+      <title>Achievements | Charvi Kusuma</title>
       <div className="mx-auto text-balance pt-14 md:pt-16">
         <GridWrapper>
           <h1 className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-4xl md:leading-[64px]">
@@ -18,6 +22,7 @@ export default async function ChangelogPage() {
         </GridWrapper>
       </div>
 
+      
       <ul className="flex flex-col">
         {allChangelogItems.length > 0 ? (
           <>

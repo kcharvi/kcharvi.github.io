@@ -1,7 +1,9 @@
+// app/components/AnimatedMobilePhotos.tsx
+
 "use client";
+import Image from "next/image";
 
 import { ShadowBox } from "./ShadowBox";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const images = [
@@ -40,10 +42,8 @@ export function AnimatedMobilePhotos({ delay }: { delay: number }) {
           const containerWidth = window.innerWidth;
           const imageWidth = middleImage.getBoundingClientRect().width;
 
-          // Calculate scroll position to center middle image
           const scrollPosition = (container.scrollWidth - containerWidth) / 2;
 
-          // Apply scroll position
           container.scrollTo({
             left: scrollPosition,
             behavior: "instant",
@@ -52,11 +52,9 @@ export function AnimatedMobilePhotos({ delay }: { delay: number }) {
       }
     };
 
-    // Center on mount and after resize
     centerMiddleImage();
     window.addEventListener("resize", centerMiddleImage);
 
-    // Cleanup
     return () => window.removeEventListener("resize", centerMiddleImage);
   }, []);
 

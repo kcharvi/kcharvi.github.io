@@ -1,9 +1,13 @@
+// app/projects/page.tsx
+
 "use client";
+
+import Image from "next/image";
+import Link from "next/link";
+
 import { useState } from "react";
 import { GridWrapper } from "@/app/components/GridWrapper";
 import { ProjectCategorySelect } from "@/app/components/ProjectCategorySelect";
-import Image from "next/image";
-import Link from "next/link";
 import { projects, categories } from "@/app/data/projects";
 import { Photo } from "../components/Photo";
 
@@ -18,6 +22,7 @@ export default function ProjectPage() {
 
   return (
     <div className="relative space-y-16">
+      <title>Projects | Charvi Kusuma</title>
       {/* Title */}
       <div className="relative space-y-8 md:space-y-10"></div>
       <GridWrapper className="relative space-y-10 md:space-y-16">

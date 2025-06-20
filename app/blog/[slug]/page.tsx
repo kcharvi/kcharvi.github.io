@@ -1,16 +1,20 @@
-import { notFound } from "next/navigation";
-import { MDXContent } from "@/app/components/mdx";
-// import { unstable_noStore as noStore } from "next/cache";
-import { SectionTitlePill } from "@/app/components/SectionTitlePill";
-import { HorizontalLine } from "@/app/components/HorizontalLine";
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
-import { posts } from "#site/content";
-import { getRelatedBlogPosts } from "@/app/lib/utils";
-import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
-import { BgGradient } from "@/app/components/BgGradient";
-import readingDuration from "reading-duration";
+// app/blog/[slug]/page.tsx
+
 import clsx from "clsx";
+import React from "react";
+import readingDuration from "reading-duration";
+
+import { BgGradient } from "@/app/components/BgGradient";
+import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
+import { getRelatedBlogPosts } from "@/app/lib/utils";
+import { HorizontalLine } from "@/app/components/HorizontalLine";
+import { MDXContent } from "@/app/components/mdx";
 import { Metadata, ResolvingMetadata } from "next";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+import { notFound } from "next/navigation";
+import { posts } from "#site/content";
+import { SectionTitlePill } from "@/app/components/SectionTitlePill";
+
 
 interface BlogPageProps {
   params: Promise<{
@@ -19,17 +23,14 @@ interface BlogPageProps {
 }
 
 function formatDate(date: string) {
-  // noStore();
   let currentDate = new Date();
   if (!date.includes("T")) {
     date = `${date}T00:00:00`;
   }
   let targetDate = new Date(date);
-
   let yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
   let monthsAgo = currentDate.getMonth() - targetDate.getMonth();
   let daysAgo = currentDate.getDate() - targetDate.getDate();
-
   let formattedDate = "";
 
   if (yearsAgo > 0) {
@@ -54,18 +55,15 @@ function formatDate(date: string) {
 async function getPostFromParams(params: BlogPageProps["params"]) {
   const { slug } = await params;
   const post = posts.find((post) => post.slug === slug);
-
   if (!post) {
     notFound();
   }
-
   return post;
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const post = await getPostFromParams(params);
   const similarPosts = getRelatedBlogPosts(post);
-
   const readingTime = readingDuration(post.code, {
     wordsPerMinute: 200,
     emoji: false,
@@ -163,6 +161,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
                 <p>{formatDate(post.publishedAt)}</p>
               </div>
+
               {/* Read Time */}
               <div className="flex items-center gap-1.5 text-xs text-slate-200">
                 <svg
@@ -250,7 +249,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const slug = (await params).slug;
-
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
@@ -258,7 +256,6 @@ export async function generateMetadata(
       title: "Blog Post Not Found",
     };
   }
-
   const previousImages = (await parent)?.openGraph?.images || [];
 
   return {

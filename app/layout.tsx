@@ -1,3 +1,5 @@
+// app/layout.tsx
+
 import "./globals.css";
 import type { Metadata } from "next";
 import { siteMetadata } from "app/data/siteMetadata";

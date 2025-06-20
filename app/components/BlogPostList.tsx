@@ -1,3 +1,5 @@
+// app/components/BlogPostList.tsx
+
 import Link from "next/link";
 import { Suspense } from "react";
 

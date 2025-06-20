@@ -1,3 +1,5 @@
+// app/components/VisionBoardCard.tsx
+
 import { patterns } from "@/app/lib/visionBoard/types";
 import Image from "next/image";
 

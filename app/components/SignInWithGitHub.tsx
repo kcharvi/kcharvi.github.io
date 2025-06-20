@@ -1,3 +1,5 @@
+// app/components/SignInWithGitHub.tsx
+
 "use client";
 
 import React, { useEffect } from "react";

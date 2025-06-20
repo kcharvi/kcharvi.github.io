@@ -1,3 +1,5 @@
+// app/components/Timeline.tsx
+
 "use client";
 
 import Image from "next/image";

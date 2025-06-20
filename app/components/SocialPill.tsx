@@ -1,3 +1,5 @@
+// app/components/SocialPill.tsx
+
 import { siteMetadata } from "app/data/siteMetadata";
 
 export function SocialPill() {

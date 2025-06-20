@@ -1,3 +1,5 @@
+// app/lib/visionBoard/types.tsx
+
 import { type ReactElement } from "react";
 
 export type Pattern = {

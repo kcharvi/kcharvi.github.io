@@ -1,3 +1,5 @@
+// app/components/GridWrapper.tsx
+
 import clsx from "clsx";
 
 export function GridWrapper({

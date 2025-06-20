@@ -1,3 +1,5 @@
+// app/external/actions.ts
+
 type CreateContactResponse = {
   success: boolean;
   error?: string;
@@ -7,7 +9,6 @@ export async function createContact(
   email: string,
 ): Promise<CreateContactResponse> {
   try {
-    // Create form data for Formspree
     const formData = new URLSearchParams();
     formData.append("email", email);
     formData.append(

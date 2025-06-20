@@ -1,10 +1,12 @@
+// app/components/Navbar.tsx
+
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
+import { CloseButton, Dialog, DialogPanel } from "@headlessui/react";
 import { SocialPill } from "./SocialPill";
 import { usePathname } from "next/navigation";
-import { CloseButton, Dialog, DialogPanel } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
 type NavigationLink = {

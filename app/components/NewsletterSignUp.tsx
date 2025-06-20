@@ -1,3 +1,5 @@
+// app/components/NewsletterSignUp.tsx
+
 "use client";
 
 import { useState, FormEvent } from "react";
@@ -141,7 +143,7 @@ export function NewsletterSignUp({
                   {formState.isLoading ? "Sending..." : buttonText}
                 </button>
               </form>
-              {/* Set minimum height to prevent layout shift */}
+
               <div className="min-h-[15px] md:min-h-[30px]">
                 {formState.message && (
                   <p

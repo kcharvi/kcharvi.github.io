@@ -1,6 +1,9 @@
+// app/components/CreateVisionNoteBuilder.tsx
+
 "use client";
 
 import Link from "next/link";
+
 import { useEffect, useState } from "react";
 import { patterns } from "../lib/visionBoard/types";
 import { VisionBoardCard } from "./VisionBoardCard";

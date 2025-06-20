@@ -1,3 +1,5 @@
+// app/components/BgSectionTag.tsx
+
 export enum TagType {
   FOOTER = "<footer>",
   HEADER = "<header>",

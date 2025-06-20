@@ -1,9 +1,12 @@
+// app/components/ProjectsBento.tsx
+
 "use client";
+
+import clsx from "clsx";
+import Image from "next/image";
 
 import { BentoCard } from "./BentoCard";
 import { motion, useAnimation } from "framer-motion";
-import clsx from "clsx";
-import Image from "next/image";
 
 export function ProjectsBento({
   linkTo,

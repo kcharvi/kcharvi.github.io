@@ -1,20 +1,24 @@
+// app/blog/category/page.tsx
+
 "use client";
 import { useState } from "react";
 import {
   extractUniqueBlogCategories,
   fetchAndSortBlogPosts,
 } from "app/lib/utils";
-import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
+
 import { BlogPostList } from "@/app/components/BlogPostList";
 import { CategorySelect } from "@/app/components/CategorySelect";
+import { NewsletterSignUp } from "@/app/components/NewsletterSignUp";
 
 export default function CategoryPage() {
   const allPublishedBlogPosts = fetchAndSortBlogPosts();
+
   const categories = Array.from(
     extractUniqueBlogCategories(allPublishedBlogPosts),
   );
+  
   const [category, setCategory] = useState("");
-
   const categoryPosts = category
     ? allPublishedBlogPosts.filter(
         (post) =>

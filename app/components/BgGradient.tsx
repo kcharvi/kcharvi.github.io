@@ -1,3 +1,5 @@
+// app/components/BgGradient.tsx
+
 export function BgGradient() {
   return (
     <div

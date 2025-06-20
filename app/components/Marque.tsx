@@ -1,17 +1,12 @@
+// app/components/Marque.tsx
+
 "use client";
 
-import { motion } from "framer-motion";
 import { clsx } from "clsx";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Marquee(props) {
-  const { itemSize, gap, items, speed, isHovered } = props;
-
-  const marqueeContainer = {
-    display: "flex",
-    gap: gap,
-    width: "fit-content",
-  };
+  const { speed } = props;
 
   const itemStyle = {
     overflow: "hidden",

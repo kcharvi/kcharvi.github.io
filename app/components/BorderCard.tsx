@@ -1,3 +1,5 @@
+// app/components/BorderCard.tsx
+
 type BorderCardProps = {
   children: React.ReactNode;
 };

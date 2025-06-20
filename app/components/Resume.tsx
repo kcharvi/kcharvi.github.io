@@ -1,3 +1,5 @@
+// app/components/Resume.tsx
+
 import { ResumeData } from "../lib/resume/types";
 import { Timeline } from "./Timeline";
 import { FiExternalLink } from "react-icons/fi";

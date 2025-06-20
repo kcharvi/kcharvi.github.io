@@ -1,9 +1,12 @@
+// app/components/SpeakingBento.tsx
+
 "use client";
+
+import Image from "next/image";
+import React from "react";
 
 import { BentoCard } from "./BentoCard";
 import { motion } from "framer-motion";
-import React from "react";
-import Image from "next/image";
 import { siteMetadata } from "@/app/data/siteMetadata";
 
 export function SpeakingBento() {
@@ -68,6 +71,7 @@ export function SpeakingBento() {
             <SecondaryPhoto imgSrc="/home/podcast.svg" />
           </motion.span>
         </div>
+        
         {/* Gradient overlay */}
         <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-white"></div>
         <div className="absolute bottom-6 left-6 z-50 grid h-full grid-cols-2 grid-rows-2 items-end gap-8">

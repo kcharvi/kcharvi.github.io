@@ -1,71 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img src="./public/ck_color_black_no_bg.svg" alt="Logo" width="100" />
+  <h1>Charvi Kusuma | AI Engineer & Researcher</h1>
+  <p>Welcome to the source code of my personal digital space. This portfolio is a curated exhibit of my journey, projects, ideas, and learnings in the world of AI and software development.</p>
+  <a href="https://kcharvi.github.io/">
+    <img src="./public/charvikusuma_overlay.png" alt="Portfolio Screenshot" />
+  </a>
+</div>
 
-## Getting Started
+## ✨ About This Portfolio
 
-First, run the development server:
+This isn't just a static website; it's a dynamic and interactive digital portfolio designed to showcase my skills and projects in an engaging way. Built up with a modern tech stack, it features smooth animations, a component-driven architecture, and a content management system for blogs and project updates.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**[➡️ View the Live Site](https://kcharvi.github.io/)**
+
+## 🌟 Key Features
+
+- **Interactive UI**: Engaging user experience with animations powered by Framer Motion.
+- **Component-Driven Architecture**: Built with reusable and modular React components.
+- **Dynamic Content**: Blog posts and changelogs are managed via Velite, providing an easy-to-update, git-based content management system.
+- **Responsive Design**: A beautiful and functional experience across all devices, from mobile phones to desktops.
+- **Real-time Stats**: The `StatsBento` component fetches and displays my latest LeetCode statistics.
+- **Engaging Visuals**: Features like the `PhotoGallery`, `Timeline`, and `BentoBoxes` create a playful, interactive experience.
+
+## 🛠️ Tech Stack
+
+This project is built with a modern, robust, and scalable technology stack:
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Content Management**: [Velite](https://velite.js.org/) (for MDX-based content)
+- **Deployment**: [GitHub Pages](https://pages.github.com/)
+
+## 🚀 Getting Started
+
+To get this project running locally, follow these simple steps:
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/kcharvi/kcharvi.github.io.git
+    cd kcharvi.github.io
+    ```
+
+2.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## 📁 Project Structure
+
+The repository is structured to be clean, scalable, and easy to navigate. Here is a high-level overview of the key directories:
+
+```
+kcharvi.github.io/
+├── app/                  # Main application source code (App Router)
+│   ├── (pages)/          # All page components (e.g., about, projects, blog)
+│   ├── components/       # Reusable React components used across the site
+│   ├── data/             # Static data like projects, skills, and site metadata
+│   ├── db/               # Database-related logic (actions, queries)
+│   ├── lib/              # Utility functions, custom hooks, and helpers
+│   └── layout.tsx        # The root layout for the application
+├── content/              # MDX files for blog posts and changelogs
+├── public/               # Static assets like images, fonts, and icons
+└── velite.config.ts      # Configuration for the Velite content management
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Component Showcase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The portfolio is built on a foundation of reusable and specialized components. Here are a few highlights:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **`BentoCard`**: The core of the "bento box" layout, used to create the grid-based design on the homepage and other pages.
+- **`PhotoGallery` & `AnimatedMobilePhotos`**: Creates the interactive, animated photo collages for desktop and mobile views.
+- **`MDXContent`**: Renders MDX content for blog posts and changelogs, allowing for rich text formatting and custom components within markdown.
+- **`Timeline`**: A dynamic, scroll-based timeline component used to showcase my work experience on the "About" page.
+- **`ScrapbookBento`**: An interactive component featuring draggable "stickers" with tooltips.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deployment
-
-### GitHub Pages
-
-This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
-
-#### Setup Instructions:
-
-1. **Enable GitHub Pages** in your repository:
-
-   - Go to your repository Settings → Pages
-   - Set "Source" to "GitHub Actions"
-
-2. **Push to main branch** - The GitHub Action will automatically:
-
-   - Build your Next.js project
-   - Deploy to GitHub Pages
-   - Your site will be available at `https://yourusername.github.io/your-repo-name`
-
-3. **Custom Domain** (Optional):
-   - Add your custom domain in repository Settings → Pages
-   - Update the domain in your DNS settings
-
-#### Manual Deployment:
-
-```bash
-# Build the project
-npm run build
-
-# The static files will be generated in the `out` directory
-# You can then deploy the `out` directory to any static hosting service
-```
-
-### Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-Credit: The base template I have built upon is from braydoncoyer.dev and customised with several components.
+Credit Template: The base template I have built upon is from braydoncoyer.dev and customised components for my use case.

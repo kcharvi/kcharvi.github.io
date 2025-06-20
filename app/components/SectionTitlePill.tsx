@@ -1,3 +1,5 @@
+// app/components/SectionTitlePill.tsx
+
 import { HorizontalLine } from "./HorizontalLine";
 
 type SectionTitlePillProps = {

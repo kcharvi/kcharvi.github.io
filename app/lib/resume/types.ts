@@ -1,3 +1,5 @@
+// app/lib/resume/types.ts
+
 export interface Position {
   title: string;
   description: string[];

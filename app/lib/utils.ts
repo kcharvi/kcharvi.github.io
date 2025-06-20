@@ -1,10 +1,11 @@
-import { Blog, Changelog, changelogItems, posts } from "#site/content";
-// import { unstable_noStore as noStore } from "next/cache";
-import { notFound } from "next/navigation";
+// app/lib/utils.ts
+
 import { ClassValue, clsx } from "clsx";
+import { Blog, Changelog, changelogItems, posts } from "#site/content";
+import { notFound } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+
 export const formatDate = (date: string) => {
-  // noStore();
   let currentDate = new Date();
   if (!date.includes("T")) {
     date = `${date}T00:00:00`;
@@ -71,7 +72,7 @@ export function fetchAndSortChangelogEntrees(): Changelog[] {
 
 export function fetchAndSortBlogPosts(): Blog[] {
   try {
-    const allPosts = posts; // Assuming 'posts' is a promise or async call
+    const allPosts = posts; 
     return allPosts
       .filter((post) => !post.draft)
       .sort(
@@ -97,7 +98,6 @@ export function getRelatedBlogPosts(
     ),
   );
 
-  // Sort by number of matching categories (most relevant first)
   const sortedByRelevance = sameCategories.sort((a, b) => {
     const aMatches = a.categories.filter((cat) =>
       currentPost.categories.includes(cat),

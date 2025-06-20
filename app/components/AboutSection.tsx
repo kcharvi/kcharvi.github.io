@@ -1,13 +1,11 @@
-import { SectionTitlePill } from "./SectionTitlePill";
+// app/components/AboutSection.tsx
+
+import { BentoCard } from "./BentoCard";
+import { CalendarBento } from "./CalendarBento";
 import { HorizontalLine } from "./HorizontalLine";
 import { ProjectsBento } from "./ProjectsBento";
+import { SectionTitlePill } from "./SectionTitlePill";
 import { ToolboxBento } from "./ToolboxBento";
-import { CalendarBento } from "./CalendarBento";
-import { BentoCard } from "./BentoCard";
-import { CirclePattern } from "./SpeakingBento";
-import { motion } from "framer-motion";
-import { BuildCircle } from "./BuildCircle";
-import { VisionBoardBento } from "./VisionBoardBento";
 
 export function AboutSection(): React.ReactNode {
   return (
@@ -24,6 +22,8 @@ export function AboutSection(): React.ReactNode {
         <HorizontalLine />
         <div>
           <HorizontalLine />
+
+          {/* About Grid */}
           <div className="grid grid-cols-1 grid-rows-[14] gap-2 md:grid-cols-12">
             <BentoCard colSpan={5} rowSpan={6} height="h-[220px]">
               Currnetly Playing
@@ -41,9 +41,7 @@ export function AboutSection(): React.ReactNode {
         <div className="group relative col-span-5 row-span-6 flex h-[220px] flex-col overflow-hidden rounded-2xl border border-border-primary p-6 hover:bg-white"></div>
 
         <ProjectsBento />
-
         <ToolboxBento />
-
         <CalendarBento />
       </div>
       <HorizontalLine />

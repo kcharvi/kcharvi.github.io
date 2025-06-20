@@ -1,3 +1,5 @@
+// app/data/siteMetadata.ts
+
 export const siteMetadata = {
   title: "Charvi Kusuma",
   description: "AI/ML Engineer and Researcher. Wander around my digital space!",

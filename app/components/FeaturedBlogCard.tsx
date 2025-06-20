@@ -1,5 +1,7 @@
-import Link from "next/link";
+// app/components/FeaturedBlogCard.tsx
+
 import clsx from "clsx";
+import Link from "next/link";
 import Image from "next/image";
 
 type FeaturedBlogCardProps = {
@@ -26,8 +28,8 @@ export function FeaturedBlogCard({
     <>
       <Image
         src={
-          `/blog/${imageName}` ||
-          "https://image.isu.pub/190918160849-8822f46c79620853d26cb2aad7175839/jpg/page_1_thumb_large.jpg"
+          `/blog/${imageName}` || 
+          "/blog/charvikusuma_overlay.png"
         }
         alt="Blog Image"
         className="h-[280px] rounded-2xl object-cover md:h-[225px]"

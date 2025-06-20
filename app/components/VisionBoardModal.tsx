@@ -1,3 +1,5 @@
+// app/components/VisionBoardModal.tsx
+
 import { SignInWithGitHub } from "./SignInWithGitHub";
 
 export async function VisionBoardModal() {

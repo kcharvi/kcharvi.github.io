@@ -1,3 +1,5 @@
+// app/lib/getRandomNumberInRange.tsx
+
 "use client";
 export function getRandomNumberInRange(min: number, max: number): number {
   if (min >= max) {
