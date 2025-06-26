@@ -10,12 +10,8 @@ import { VisionBoardCard } from "./VisionBoardCard";
 
 export function CreateVisionNoteBuilder({
   onSubmit,
-  creator_name,
-  creator_avatar_url,
 }: {
   onSubmit: (formData: FormData) => Promise<void>;
-  creator_name: string;
-  creator_avatar_url: string;
 }) {
   const [message, setMessage] = useState("");
   const [patternIndex, setPatternIndex] = useState(() =>
@@ -67,8 +63,9 @@ export function CreateVisionNoteBuilder({
           <div style={{ transform: `rotate(${rotation}deg)` }}>
             <VisionBoardCard
               patternIndex={patternIndex}
-              author={creator_name}
-              profilePicture={creator_avatar_url}
+              title="Vision Note"
+              ideaDescription={message}
+              techStack={[]}
               rotation={rotation}
               className="h-[450px] w-[375px]"
             />
