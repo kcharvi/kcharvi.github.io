@@ -1,7 +1,14 @@
 // app/lib/utils.ts
 
 import { ClassValue, clsx } from "clsx";
-import { Blog, Changelog, changelogItems, posts } from "#site/content";
+import {
+  Blog,
+  Changelog,
+  changelogItems,
+  posts,
+  VisionProject,
+  visionProjects,
+} from "#site/content";
 import { notFound } from "next/navigation";
 import { twMerge } from "tailwind-merge";
 
@@ -72,7 +79,7 @@ export function fetchAndSortChangelogEntrees(): Changelog[] {
 
 export function fetchAndSortBlogPosts(): Blog[] {
   try {
-    const allPosts = posts; 
+    const allPosts = posts;
     return allPosts
       .filter((post) => !post.draft)
       .sort(
@@ -139,4 +146,15 @@ export function extractUniqueBlogCategories(posts: Blog[]): Set<string> {
     post.categories.forEach((category) => categories.add(category));
   });
   return categories;
+}
+
+export function fetchAndSortVisionProjects(): VisionProject[] {
+  try {
+    const allProjects = visionProjects;
+    return allProjects
+      .filter((project) => !project.draft)
+      .sort((a, b) => a.patternIndex - b.patternIndex);
+  } catch (error) {
+    notFound();
+  }
 }

@@ -45,6 +45,25 @@ export const changelogItems = defineCollection({
     .transform(computedFields),
 });
 
+export const visionProjects = defineCollection({
+  name: "VisionProject", // collection type name
+  pattern: "./vision-projects/*.mdx", // content files glob pattern
+  schema: s
+    .object({
+      title: s.string(),
+      ideaDescription: s.string(),
+      techStack: s.array(s.string()),
+      patternIndex: s.number().default(0),
+      rotation: s.number().default(0),
+      slug: s.custom().transform((_, { meta }) => {
+        return path.basename(meta.basename || "", ".mdx");
+      }),
+      code: s.mdx(),
+      draft: s.boolean().default(false),
+    })
+    .transform(computedFields),
+});
+
 export default defineConfig({
   root: "content",
   output: {
@@ -54,7 +73,7 @@ export default defineConfig({
     name: "[name]-[hash:6].[ext]",
     clean: true,
   },
-  collections: { posts, changelogItems },
+  collections: { posts, changelogItems, visionProjects },
   mdx: {
     rehypePlugins: [
       [rehypeRaw, { passThrough: ["mdxJsxFlowElement", "mdxJsxTextElement"] }],
