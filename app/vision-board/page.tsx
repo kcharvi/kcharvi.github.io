@@ -42,7 +42,7 @@ export default function Page() {
             {visionProjects.map((project, index) => (
               <div
                 key={project.slug}
-                className="vision-card-fade-in vision-card-float vision-card-hover"
+                className="vision-card-fade-in vision-card-float vision-card-hover my-8"
                 style={
                   {
                     animationDelay: `${index * 0.2}s`,
