@@ -17,7 +17,7 @@ import { Resume } from "app/components/Resume";
 import { ScrapbookBento } from "@/app/components/ScrapbookBento";
 import { ShadowBox } from "@/app/components/ShadowBox";
 import { StatsBento } from "@/app/components/StatsBento";
-import { VisionBoardBento } from "@/app/components/VisionBoardBento";
+import { VisionBoardAboutBento } from "@/app/components/VisionBoardAboutBento";
 
 export default function AboutPage() {
   const timeOfDayGreeting = getTimeOfDayGreeting();
@@ -326,7 +326,7 @@ export default function AboutPage() {
           <GridWrapper>
             <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
               <div className="lg:col-span-3 lg:row-span-6">
-                <VisionBoardBento linkTo="/vision-board" />
+                <VisionBoardAboutBento linkTo="/vision-board" />
               </div>
               <div className="hidden lg:col-span-7 lg:row-span-5 lg:block">
                 <ScrapbookBento />

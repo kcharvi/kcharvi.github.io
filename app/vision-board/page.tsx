@@ -10,7 +10,7 @@ export default function Page() {
       <div className="flex flex-wrap justify-center gap-24 p-12">
         {/* TODO: Add a button to add a new item */}
       </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex h-full flex-col items-center justify-end bg-gradient-to-b from-transparent to-zinc-300 pb-8">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex h-full flex-col items-center justify-end bg-gradient-to-b from-transparent pb-8">
         <VisionBoardAnimatedCircle />
       </div>
     </>

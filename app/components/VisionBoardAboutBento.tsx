@@ -1,4 +1,4 @@
-// app/components/VisionBoardBento.tsx
+// app/components/VisionBoardAboutBento.tsx
 
 "use client";
 
@@ -7,7 +7,7 @@ import { CirclePattern } from "./SpeakingBento";
 import { motion } from "framer-motion";
 import { BuildCircle } from "./BuildCircle";
 
-export function VisionBoardBento({ linkTo }: { linkTo?: string }) {
+export function VisionBoardAboutBento({ linkTo }: { linkTo?: string }) {
   return (
     <BentoCard height="h-[300px]" linkTo={linkTo}>
       <div className="flex flex-col">
