@@ -159,7 +159,7 @@ export default function AboutPage() {
                   These Days
                 </h2>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
-                  I&apos;m immersed in the possibilites of language models. Let
+                  I&apos;m immersed in the possibilities of language models. Let
                   the big tech handle huge computes while I build end-to-end
                   apps with LLMs, RAG pipelines, and exploring agentic workflows
                   with LangChain, CrewAI and bunch of other tools. I&apos;m also
