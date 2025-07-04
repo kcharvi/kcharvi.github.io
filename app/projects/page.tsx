@@ -50,14 +50,14 @@ export default function ProjectPage() {
         </div>
       </GridWrapper>
 
-      <div className="relative space-y-8 text-center">
+      <div className="relative space-y-8">
         <GridWrapper>
-          <div className="text-sm font-medium text-indigo-600">
+          <div className="text-sm font-medium text-center text-indigo-600">
             <span>Projects</span>
           </div>
         </GridWrapper>
         <GridWrapper>
-          <h2 className="mx-auto max-w-xl text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
+          <h2 className="mx-auto max-w-xl text-center text-balance text-3xl font-medium leading-[40px] tracking-tighter text-text-primary">
             Learning is constant and it happens faster when you code, break and
             build stuff
           </h2>
