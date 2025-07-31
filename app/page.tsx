@@ -78,7 +78,7 @@ export default async function Home() {
                   delay={PARAGRAPH_DELAY}
                   className="leading-8 text-text-secondary"
                 >
-                  I&apos;m an AI engineer & researcher always curious, and
+                  I&apos;m a Software Engineer and AI/ML researcher always curious, and
                   strategic to bring ideas to life and explore what&apos;s next
                   in AI. I am adept at both software development and research
                   aspects of AI, ensuring AI models are accurate, scalable, and

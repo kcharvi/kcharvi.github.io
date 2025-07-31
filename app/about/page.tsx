@@ -33,8 +33,8 @@ export default function AboutPage() {
               <div className="text-center text-sm font-medium text-indigo-600 lg:text-left">
                 <span>{timeOfDayGreeting}</span>
               </div>
-              <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:text-6xl lg:leading-[64px]">
-                I&apos;m Charvi, an AI/ML Engineer and Researcher.
+              <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-3xl lg:text-left lg:text-5xl lg:leading-[64px]">
+                I&apos;m Charvi, a Software Engineer and AI/ML Researcher.
               </h1>
             </div>
             <div className="order-1 my-12 flex-shrink-0 lg:order-2 lg:my-0">

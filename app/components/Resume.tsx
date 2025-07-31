@@ -8,6 +8,42 @@ import { ExperienceImage } from "./ExperienceImage";
 const resumeData: ResumeData = {
   experiences: [
     {
+      company: "Scoleaf - Startup",
+      period: "Jul 2025 - Present",
+      certificates: [
+        {
+          name: "Website",
+          url: "https://scoleaf.com/",
+        },
+      ],
+      positions: [
+        {
+          title: "Software Developer - AI",
+          description: [
+            "Developed an AI tutoring agent with voice/video using FastAPI, React, and LiveKit, boosting user engagement by 25%. Led end-to-end MVP launch in 3 weeks, contributing to viral growth with innovative GenAI features.Built a modular, scalable platform enabling real-time interactive learning.",
+          ],
+        },
+      ],
+    },
+    {
+      company: "Pi4Wear - Startup",
+      period: "Jul 2024 - Jun 2025",
+      certificates: [
+        {
+          name: "Website",
+          url: "https://pi4wear.com/",
+        },
+      ],
+      positions: [
+        {
+          title: "Full Stack AI Engineer",
+          description: [
+            "Built real-time AI assistants with async API orchestration across 7+ tools, enabling sub-300ms responses. Designed multi-step LLM tool use and floating multimodal interfaces for seamless user interaction. Secured Node.js backend with middleware, driving scalable, low-latency AI experiences at Pi4Wear.",
+          ],
+        },
+      ],
+    },
+    {
       company: "University at Buffalo",
       period: "Jan 2024 - Present",
       certificates: [
