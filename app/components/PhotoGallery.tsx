@@ -68,15 +68,15 @@ export const PhotoGallery = ({
   };
 
   const photos = [
-    {
-      id: 1,
-      order: 0,
-      x: "-320px",
-      y: "15px",
-      zIndex: 50, 
-      direction: "left" as Direction,
-      src: "/charvi_4.JPG",
-    },
+    // {
+    //   id: 1,
+    //   order: 0,
+    //   x: "-320px",
+    //   y: "15px",
+    //   zIndex: 50, 
+    //   direction: "left" as Direction,
+    //   src: "/charvi_4.JPG",
+    // },
     {
       id: 2,
       order: 1,
@@ -84,7 +84,7 @@ export const PhotoGallery = ({
       y: "32px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/charvi_11.jpg",
+      src: "/charvi_4.jpg",
     },
     {
       id: 3,
@@ -104,15 +104,15 @@ export const PhotoGallery = ({
       direction: "right" as Direction,
       src: "/charvi_6.jpg",
     },
-    {
-      id: 5,
-      order: 4,
-      x: "320px",
-      y: "44px",
-      zIndex: 10, 
-      direction: "left" as Direction,
-      src: "/charvi_5.jpg",
-    },
+    // {
+    //   id: 5,
+    //   order: 4,
+    //   x: "320px",
+    //   y: "44px",
+    //   zIndex: 10, 
+    //   direction: "left" as Direction,
+    //   src: "/charvi_5.jpg",
+    // },
   ];
 
   return (
