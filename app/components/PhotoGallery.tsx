@@ -26,7 +26,7 @@ export const PhotoGallery = ({
         setIsLoaded(true);
       },
       (animationDelay + 0.4) * 1000,
-    ); 
+    );
 
     return () => {
       clearTimeout(visibilityTimer);
@@ -40,7 +40,7 @@ export const PhotoGallery = ({
       opacity: 1,
       transition: {
         staggerChildren: 0.15,
-        delayChildren: 0.1, 
+        delayChildren: 0.1,
       },
     },
   };
@@ -55,14 +55,14 @@ export const PhotoGallery = ({
     visible: (custom) => ({
       x: custom.x,
       y: custom.y,
-      rotate: 0, 
+      rotate: 0,
       scale: 1,
       transition: {
         type: "spring",
         stiffness: 70,
         damping: 12,
         mass: 1,
-        delay: custom.order * 0.15, 
+        delay: custom.order * 0.15,
       },
     }),
   };
@@ -73,7 +73,7 @@ export const PhotoGallery = ({
     //   order: 0,
     //   x: "-320px",
     //   y: "15px",
-    //   zIndex: 50, 
+    //   zIndex: 50,
     //   direction: "left" as Direction,
     //   src: "/charvi_4.JPG",
     // },
@@ -109,7 +109,7 @@ export const PhotoGallery = ({
     //   order: 4,
     //   x: "320px",
     //   y: "44px",
-    //   zIndex: 10, 
+    //   zIndex: 10,
     //   direction: "left" as Direction,
     //   src: "/charvi_5.jpg",
     // },
@@ -134,7 +134,7 @@ export const PhotoGallery = ({
               <motion.div
                 key={photo.id}
                 className="absolute left-0 top-0"
-                style={{ zIndex: photo.zIndex }} 
+                style={{ zIndex: photo.zIndex }}
                 variants={photoVariants}
                 custom={{
                   x: photo.x,
