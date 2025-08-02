@@ -84,7 +84,7 @@ export const PhotoGallery = ({
       y: "32px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/charvi_4.jpg",
+      src: "/charvi_4.JPG",
     },
     {
       id: 3,
